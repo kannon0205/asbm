@@ -4,6 +4,9 @@ const mysql = require('mysql');
 const Sequelize = require('sequelize');
 const config = require('./config/config');
 
+const http = require('http');
+
+
 // Sequelize インスタンス
 const sequelize = new Sequelize({
   dialect: 'mysql',
@@ -851,4 +854,11 @@ app.get('/', authMiddleware, (req, res) => {
   });
 });
 
-app.listen(3000);
+http.createServer(function (request, response) {
+  response.writeHead(200, {
+    'Content-Type': 'text/plain'
+  });
+  response.end('Hello, World\n');
+}).listen(process.env.PORT, process.env.IP);
+
+//app.listen(3000);
