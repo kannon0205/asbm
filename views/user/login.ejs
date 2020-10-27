@@ -1,0 +1,55 @@
+<% const localmeta = {
+  title: 'ソーシャルブックマークサービス | ASB',
+  desc: 'desc'
+};
+%>
+
+
+
+<!--header-->
+<%- include('../partials/header', {meta: localmeta}); %>
+<!--/header-->
+
+<div class="top-wrapper flex-container flex-center">
+  <div class="top-container tc1">
+
+    <h1>ASB</h1>
+
+    <div class="form-container tc2 shadow">
+      <section>
+        <form action="/login" method="post">
+          <div class="form-box">
+            <p class="bold"><label for="email">メールアドレス</label></p>
+            <p><input name="email" type="text" placeholder="Email" id="email"></p>
+          </div>
+          <div class="form-box">
+            <p class="bold"><label for="password">パスワード</label></p>
+            <p><input name="password" type="password" placeholder="Password" id="password"></p>
+            <p class="form-checkbox"><label><input type="checkbox" name="remember" value="1" id="remember">次回から省略</label></p>
+          </div>
+
+          <% if(errorMessage) { %>
+          <div class="form-alert">
+            <%= errorMessage %>
+          </div>
+          <% } %>
+
+          <% if(correctMessage) { %>
+          <div class="form-alert">
+            <%= correctMessage %>
+          </div>
+          <% } %>
+
+          <p><input type="submit" value="ログイン"></p>
+          <p class="change-form">または<a class="tc3" href="/register">新規登録</a></p>
+        </form>
+      </section>
+    </div>
+
+  </div>
+
+</div>
+
+<!--footer-->
+<%- include('../partials/footer'); %>
+<!--/footer-->

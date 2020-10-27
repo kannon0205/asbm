@@ -1,0 +1,75 @@
+<% const localmeta = {
+  title: '新規登録 | ASB',
+    desc: 'desc'
+  };
+%>
+
+
+<!--header-->
+<%- include('../partials/header', {meta: localmeta}); %>
+<!--/header-->
+<div class="top-wrapper flex-container flex-center">
+  <div class="top-container">
+
+    <div class="form-container tc2 shadow">
+      <section>
+        <h2>新規登録</h2>
+        <form action="/register" method="post">
+
+          <div class="form-box">
+            <p class="bold"><label for="name">ユーザーネーム</label></p>
+            <p><input name="name" type="text" placeholder="4文字から20文字にしてください。" id="name" value="<%= name %>"></p>
+          </div>
+
+          <% if(resultName) { %>
+          <div class="form-alert">
+            <%= resultName.msg %>
+          </div>
+          <% } %>
+
+          <div class="form-box">
+            <p class="bold"><label for="email">メールアドレス</label></p>
+            <p><input name="email" type="text" placeholder="Email" id="email" value="<%= email %>"></p>
+          </div>
+
+          <% if(resultEmail) { %>
+          <div class="form-alert">
+            <%= resultEmail.msg %>
+          </div>
+          <% } %>
+
+          <% if(correctMessage) { %>
+          <div class="form-alert">
+            <%= correctMessage %>
+          </div>
+          <% } %>
+
+          <div class="form-box">
+            <p class="bold"><label for="password">パスワード</label></p>
+            <p><input name="password" type="password" placeholder="8文字から25文字にしてください。" id="password" value="<%= password %>"></p>
+          </div>
+
+          <% if(resultPassword) { %>
+          <div class="form-alert">
+            <%= resultPassword.msg %>
+          </div>
+          <% } %>
+
+          <div class="form-box">
+            <p class="bold"><label for="passwordConfirmation">パスワード(確認)</label></p>
+            <p><input name="passwordConfirmation" type="password" placeholder="8文字から25文字にしてください。" id="passwordConfirmation" value="<%= passwordConfirmation %>" class="tc6"></p>
+          </div>
+
+          <p><input type="submit" value="新規登録"></p>
+          <p class="change-form">または<a class="tc3" href="/login">ログイン</a></p>
+        </form>
+      </section>
+    </div>
+
+  </div>
+
+</div>
+
+<!--footer-->
+<%- include('../partials/footer'); %>
+<!--/footer-->

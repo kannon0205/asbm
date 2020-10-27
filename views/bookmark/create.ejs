@@ -1,0 +1,95 @@
+<% const localmeta = {
+  title: 'マイページ | ASB',
+  desc: 'desc'
+};
+%>
+
+<% const status = {
+  nav1:'inactive',
+  nav2:'inactive',
+  nav3:'inactive',
+  nav4:'inactive'
+};
+%>
+
+<!--common-->
+<%- include('../partials/header', {meta: localmeta}); %>
+<!--/common-->
+
+<!--bottomNav-->
+<%- include('../partials/bottomNav', {status: status}); %>
+<!--/bottomNav-->
+
+<div class="wrapper bg6">
+
+  <!--header-->
+  <%- include('../template/header'); %>
+  <!--/header-->
+  <form action="/bookmark/create" method="post">
+    <section class="bookmark-container  bf bg1 shadow">
+      <div class="bf-detail">
+        <h2 class="bold">ブックマーク情報</h2>
+        <p><label for="bf-url">アドレス</label></p>
+        <input id="bf-url" type="text" name="url" value="<%= url %>">
+        <% if(resultUrl) { %>
+        <div class="bf-alert">
+          <%= resultUrl.msg %>
+        </div>
+        <% } %>
+        <% if(correctMessage) { %>
+        <div class="bf-alert">
+          <%= correctMessage %>
+        </div>
+        <% } %>
+        <p class="bf-memo"><label for="bf-memo">メモ</label></p>
+        <textarea id="bf-memo" rows="5" name="memo" value="<%= memo %>"></textarea>
+        <% if(resultMemo) { %>
+        <div class="bf-alert">
+          <%= resultMemo.msg %>
+        </div>
+        <% } %>
+        <div class="bf-public flex-container">
+          <p><label><input type="radio" name="public" value="1" <% if(public === '1') { %>checked<% } %>>公開</label></p>
+          <p><label><input type="radio" name="public" value="2" <% if(public === '2') { %>checked<% } %>>非公開</label></p>
+        </div>
+      </div>
+      <h2 class="bold">タグを追加する</h2>
+      <input id="tags" type="text" name="tags" value="<%= tags %>">
+      <% if(resultTags) { %>
+      <div class="bf-alert">
+        <%= resultTags.msg %>
+      </div>
+      <% } %>
+      <p class="bf-old tc3"><span id="openModal1">最近使ったタグ</span></p>
+      <div class="flex-container flex-center">
+        <input class="tc1 bg7 shadow" type="submit" value="登録">
+      </div>
+    </section>
+  </form>
+</div>
+
+<div id="modalArea1" class="modalArea">
+  <div id="modalBg1" class="modalBg"></div>
+  <div class="modalWrapper">
+
+    <section class="modal-container bg1">
+      <nav class="modal-container">
+        <ul class="bf-tags flex-container">
+          <%  for (let i = 0; i < user_tags.length && i < 20; i++) { %>
+          <li>
+            <p class="bf-tag bg3 tc1" onclick="document.getElementById('tags').value += '<%= user_tags[i].name %> ';"><%= user_tags[i].name %></p>
+          </li>
+          <% } %>
+        </ul>
+      </nav>
+    </section>
+
+    <div id="closeModal1" class="closeModal">
+      ×
+    </div>
+  </div>
+</div>
+
+<!--common-->
+<%- include('../partials/footer'); %>
+<!--/common-->

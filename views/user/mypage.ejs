@@ -1,0 +1,76 @@
+<% const localmeta = {
+  title: 'マイページ | ASB',
+  desc: 'desc'
+};
+%>
+
+<% const status = {
+  nav1:'inactive',
+  nav2:'active',
+  nav3:'inactive',
+  nav4:'inactive'
+};
+%>
+
+
+
+<!--common-->
+<%- include('../partials/header', {meta: localmeta}); %>
+<!--/common-->
+
+<!--bottomNav-->
+<%- include('../partials/bottomNav', {status: status}); %>
+<!--/bottomNav-->
+
+<div class="wrapper">
+
+  <!--header-->
+  <%- include('../template/header'); %>
+  <!--/header-->
+
+  <section id="modalArea1" class="modalArea">
+    <div id="modalBg1" class="modalBg"></div>
+    <div class="modalWrapper">
+
+      <section class="modal-container bg1">
+        <div class="modal-container user-edit-form">
+          <form action="/user/<%= current_user.id %>/edit" method="post">
+            <p><input type="text" name="name" value="<%= current_user.name %>"></p>
+            <p><input class="tc1 bg3" type="submit" value="変更"><input class="tc1 bg2" id="closeModal1" type="button" value="取り消し"></p>
+          </form>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="user-container flex-container flex-colmn flex-center tc1 bg2">
+    <div class="flex-container">
+      <p><i class="fas fa-user"></i></p>
+      <div class="user-name flex-container flex-colmn flex-center">
+        <h2 class="tc5"><%= current_user.name %></h2>
+        <p>UserID:<%= current_user.id %></p>
+      </div>
+    </div>
+    <ul class="flex-container">
+      <li>
+        <p><a class="bg3" href=""><i class="fas fa-user-plus"></i>フォロー(5)</a></p>
+      </li>
+      <li>
+        <p><a class="bg3" href=""><i class="fas fa-users"></i>グループ(5)</a></p>
+      </li>
+    </ul>
+  </section>
+
+  <nav class="user-menu">
+    <ul>
+      <li><a href="">タイムラインの設定</a></li>
+      <li><a id="openModal1">ユーザー名の変更</a></li>
+      <li><a href="/logout">ログアウト</a></li>
+    </ul>
+  </nav>
+
+</div>
+
+<!--common-->
+<%- include('../partials/footer'); %>
+<!--/common-->
