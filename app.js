@@ -844,7 +844,7 @@ app.get('/user/:id', authMiddleware, (req, res) => {
   });
 });
 
-app.get('/timeline/:id', authMiddleware, (req, res) => {
+app.get('/', authMiddleware, (req, res) => {
 
   res.render('timeline/show.ejs', {
     current_user: req.user
