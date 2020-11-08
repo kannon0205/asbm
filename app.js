@@ -6,7 +6,7 @@ const Op = Sequelize.Op;
 const config = require('./config/config');
 
 //本番用
-//const http = require('http');
+const http = require('http');
 //本番用
 
 
@@ -2335,9 +2335,9 @@ app.get('/', authMiddleware, (req, res) => {
 });
 
 //
-//app.listen(process.env.PORT, process.env.IP);
+app.listen(process.env.PORT, process.env.IP);
 //本番用
 
 //
-app.listen(3000);
+//app.listen(3000);
 //開発用
