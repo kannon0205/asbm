@@ -7,15 +7,16 @@
     "dialect": "mysql",
     "timezone": "+09:00",
     "operatorsAliases": false,
-    "logging": false
+    "use_env_variable": process.env.DATABASE_URL
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": process.env.USER,
+    "password": process.env.PASSWORD,
+    "database": process.env.Database,
+    "host": process.env.ENV_HOST,
     "dialect": "mysql",
-    "timezone": "+09:00"
+    "operatorsAliases": false,
+    "use_env_variable": process.env.DATABASE_URL
   },
   "production": {
     "username": process.env.USER,
