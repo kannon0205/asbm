@@ -4,6 +4,7 @@ const mysql = require('mysql');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const config = require('./config/config');
+const PORT = process.env.PORT || 5000;
 
 //本番用
 const http = require('http');
