@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const app = express();
 const pg = require('pg');
@@ -11,12 +10,13 @@ const config = require('./config/config');
 const http = require('http');
 //本番用
 
+//require('dotenv').config();
 
 //Sequelize インスタンス
 //const sequelize = new Sequelize({
-      //  dialect: 'postgres',
-      //  timezone: '+09:00'
-      //});
+//  dialect: 'postgres',
+//  timezone: '+09:00'
+//});
 
 exports.pool = pg.Pool({
   host: process.env.ENV_HOST,
