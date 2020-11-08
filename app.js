@@ -12,11 +12,11 @@ const http = require('http');
 //本番用
 
 
-
+//Sequelize インスタンス
 //const sequelize = new Sequelize({
-//  dialect: 'postgres',
-//  timezone: '+09:00'
-//});
+      //  dialect: 'postgres',
+      //  timezone: '+09:00'
+      //});
 
 exports.pool = pg.Pool({
   host: process.env.ENV_HOST,
