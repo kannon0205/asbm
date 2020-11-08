@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const mysql = require('mysql');
+const pg = require('pg');
+//const mysql = require('mysql');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const config = require('./config/config');
@@ -11,11 +12,15 @@ const http = require('http');
 
 
 // Sequelize インスタンス
-const sequelize = new Sequelize({
-  dialect: 'mysql',
+//const sequelize = new Sequelize({
+//  dialect: 'mysql',
+//  timezone: '+09:00'
+//});
+const sequelize = new Sequelize(process.env.Database;, process.env.USER, process.env.PASSWORD, {
+  host: process.env.HOST,
+  dialect: 'postgres',
   timezone: '+09:00'
 });
-
 
 const passport = require('./auth');
 const session = require('express-session');
@@ -46,7 +51,7 @@ const Test = require('./models').Test;
 app.use(express.static('public'));
 
 //暗号化につかうキー
-const APP_KEY = 'YOUR-SECRET-KEY';
+const APP_KEY = process.env.APP_KEY;
 
 //ミドルウェア
 app.use(express.json());
@@ -56,7 +61,7 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(flash());
 app.use(session({
-  secret: 'YOUR-SECRET-STRING',
+  secret: process.env.APP_KEY,
   resave: true,
   saveUninitialized: true
 }));
@@ -94,21 +99,21 @@ const authMiddleware = (req, res, next) => {
   }
 };
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'ZgYddWr3FWP5',
-  database: 'asb',
-  timezone: "+09:00"
-});
-
-connection.connect((err) => {
-  if (err) {
-    console.log('error connecting: ' + err.stack);
-    return;
-  }
-  console.log('success');
-});
+//const connection = mysql.createConnection({
+//  host: 'localhost',
+//  user: 'root',
+//  password: 'ZgYddWr3FWP5',
+//  database: 'asb',
+//  timezone: "+09:00"
+//});
+//
+//connection.connect((err) => {
+//  if (err) {
+//    console.log('error connecting: ' + err.stack);
+//    return;
+//  }
+//  console.log('success');
+//});
 
 //-----------------------------------------//
 
