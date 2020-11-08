@@ -1,7 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const pg = require('pg');
-require('dotenv').config();
 //const mysql = require('mysql');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
