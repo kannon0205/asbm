@@ -15,6 +15,7 @@
     "database": process.env.Database,
     "host": process.env.HOST,
     "dialect": "postgres",
+    "operatorsAliases": false,
     "timezone": "+09:00"
   },
   "production": {
@@ -23,6 +24,7 @@
     "database": process.env.Database,
     "host": process.env.HOST,
     "dialect": "postgres",
+    "operatorsAliases": false,
     "timezone": "+09:00"
   }
 }
