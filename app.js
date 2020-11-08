@@ -1,7 +1,7 @@
-require('dotenv').config()
 const express = require('express');
 const app = express();
 const pg = require('pg');
+require('dotenv').config();
 //const mysql = require('mysql');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -12,10 +12,18 @@ const http = require('http');
 //本番用
 
 
-// Sequelize インスタンス
+Sequelize インスタンス
 const sequelize = new Sequelize({
   dialect: 'postgres',
   timezone: '+09:00'
+});
+
+exports.pool = pg.Pool({
+  host: process.env.ENV_HOST,
+  database: process.env.Database,
+  user: process.env.USER,
+  port: process.env.PORT,
+  password: process.env.PASSWORD,
 });
 
 //const sequelize = new Sequelize(process.env.Database;, process.env.USER, process.env.PASSWORD, {
@@ -100,14 +108,6 @@ const authMiddleware = (req, res, next) => {
     res.redirect(302, '/login');
   }
 };
-
-const pgPool = new pg.Pool({
-  database: process.env.Database,
-  user: process.env.USER,
-  password: process.env.PASSWORD,
-  host: process.env.HOST,
-  port: process.env.PORT,
-});
 
 //const connection = mysql.createConnection({
 //  host: 'localhost',
