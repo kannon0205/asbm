@@ -1,0 +1,116 @@
+<% const localmeta = {
+  title: 'タイムライン | ASB',
+  desc: 'desc'
+};
+%>
+
+<% const status = {
+  nav1:'active',
+  nav2:'inactive',
+  nav3:'inactive',
+  nav4:'inactive'
+};
+%>
+
+<!--common-->
+<%- include('../partials/header', {meta: localmeta}); %>
+<!--/common-->
+
+<!--bottomNav-->
+<%- include('../partials/bottomNav', {status: status}); %>
+<!--/bottomNav-->
+
+
+<div class="swiper-container swiper1  bg5">
+  <div class="swiper-wrapper">
+
+    <% if(max_number === 0) {%>
+
+    <div class="swiper-slide">
+      <div class="bookmark-wrapper">
+        <!--header-->
+        <%- include('../template/header'); %>
+        <!--/header-->
+        <div>
+
+          <section class="bookmark-container shadow bg1">
+            <h2 class="bold">タイムラインがありません</h2>
+            <p class="timeline-create tc3">
+              <a href="<%= '/timeline/create/' + 1 %>">新規作成</a>
+            </p>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <% } else { %>
+
+    <% for (let i = 1; i < max_number + 1; i++) { %>
+
+    <div class="swiper-slide">
+      <div class="bookmark-wrapper">
+
+        <!--header-->
+        <%- include('../template/header'); %>
+        <!--/header-->
+        <div>
+          <% timeline[i].bookmark.forEach((bookmark) => { %>
+
+          <section class="bookmark-container shadow bg1">
+            <div class="ogp">
+              <h2 class="title bold"><%= bookmark.title %></h2>
+              <p class="url tc3"><a href="<%= bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= bookmark.url %></a></p>
+              <p><%= bookmark.site_name %></p>
+            </div>
+            <p class="memo"><%= bookmark.memo %></p>
+            <p>
+              <% bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
+              #<a class="tc5" href="<%= '/tag/' + bookmarkTag.id %>"><%= bookmarkTag.name -%></a>
+              <% }); %>
+            </p>
+            <div class="bookmark-user flex-container">
+              <p><i class="fas fa-user"></i></p>
+              <p class="tc3"><a href="<%= '/user/' + bookmark.User.id %>"><%= bookmark.User.name %></a></p>
+            </div>
+          </section>
+
+          <% }); %>
+
+        </div>
+      </div>
+    </div>
+
+    <% } %>
+
+    <div class="swiper-slide">
+      <div class="bookmark-wrapper">
+        <!--header-->
+        <%- include('../template/header'); %>
+        <!--/header-->
+        <div>
+
+          <% const next = max_number + 1 %>
+
+          <section class="bookmark-container shadow bg1">
+            <h2 class="bold">新規タイムライン</h2>
+            <p class="timeline-create tc3">
+              <a href="<%= '/timeline/create/' + next %>">追加</a>
+            </p>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <% } %>
+
+  </div>
+  <!-- pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- /pagination -->
+</div>
+
+<!--common-->
+<%- include('../partials/footer'); %>
+<!--/common-->

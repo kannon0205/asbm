@@ -47,3 +47,17 @@ const swiper2 = new Swiper('.swiper2', {
     }, false);
   }
 }());
+
+(function () {
+  const modalArea3 = document.getElementById('modalArea3');
+  const openModal3 = document.getElementById('openModal3');
+  const closeModal3 = document.getElementById('closeModal3');
+  const modalBg3 = document.getElementById('modalBg3');
+  const toggle3 = [openModal3, closeModal3, modalBg3];
+
+  for (let i = 0, len = toggle3.length; i < len; i++) {
+    toggle3[i].addEventListener('click', function () {
+      modalArea3.classList.toggle('is-show');
+    }, false);
+  }
+}());

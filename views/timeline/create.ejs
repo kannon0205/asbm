@@ -1,0 +1,96 @@
+<% const localmeta = {
+  title: 'マイページ | ASB',
+  desc: 'desc'
+};
+%>
+
+<% const status = {
+  nav1:'inactive',
+  nav2:'inactive',
+  nav3:'inactive',
+  nav4:'inactive'
+};
+%>
+
+<!--common-->
+<%- include('../partials/header', {meta: localmeta}); %>
+<!--/common-->
+
+<!--bottomNav-->
+<%- include('../partials/bottomNav', {status: status}); %>
+<!--/bottomNav-->
+
+<div class="wrapper bg5">
+
+  <!--header-->
+  <%- include('../template/header'); %>
+  <!--/header-->
+  <form action="<%= '/timeline/create/' + params %>" method="post">
+    <section class="tf-container bg1 shadow">
+      <h2 class="bold">タイムライン情報</h2>
+      <div class="tf-option">
+        <p><label for="name">タイムライン名</label></p>
+        <div class="tf-box">
+          <p><input name="name" id="name" type="text"></p>
+        </div>
+      </div>
+      <% if(resultName) { %>
+      <div class="bf-alert">
+        <%= resultName.msg %>
+      </div>
+      <% } %>
+      <div class="tf-option">
+        <p>グループから選ぶ</p>
+        <div class="flex-container tf-box">
+          <% groups.forEach(group => {%>
+          <p class="tf-checkbox bg3 tc1 shadow"><label><input type="checkbox" name="groups" value="<%= group.id %>"><%= group.name %></label></p>
+          <% }); %>
+        </div>
+      </div>
+      <div class="tf-option">
+        <p>フォローユーザーから選ぶ</p>
+        <div class="flex-container tf-box">
+          <% follows.forEach(follow => {%>
+          <p class="tf-checkbox bg3 tc1 shadow"><label><input type="checkbox" name="follows" value="<%= follow.User.id %>"><%= follow.User.name %></label></p>
+          <% }); %>
+        </div>
+      </div>
+      <div class="tf-option">
+        <p>タグから選ぶ</p>
+        <div class="tf-box">
+          <p><input name="tags" id="tags" type="text"></p>
+          <p class="tf-tag tc3"><span id="openModal1">最近使ったタグ</span></p>
+        </div>
+      </div>
+      <p class="flex-container flex-center"><input class="bg7 tc1" type="submit" value="登録"></p>
+    </section>
+  </form>
+</div>
+
+<div id="modalArea1" class="modalArea">
+  <div id="modalBg1" class="modalBg"></div>
+  <div class="modalWrapper">
+
+    <section class="modal-container bg1">
+      <nav class="modal-container">
+        <% if(tags){ %>
+        <ul class="bf-tags flex-container">
+          <%  for (let i = 0; i < tags.length && i < 20; i++) { %>
+          <li>
+            <p class="bf-tag bg3 tc1" onclick="document.getElementById('tags').value += '<%= tags[i].name %> ';"><%= tags[i].name %></p>
+          </li>
+          <% } %>
+        </ul>
+        <% } %>
+      </nav>
+    </section>
+
+    <div id="closeModal1" class="closeModal">
+      ×
+    </div>
+  </div>
+</div>
+
+<!--common-->
+<%- include('../partials/footer'); %>
+<!--/common-->

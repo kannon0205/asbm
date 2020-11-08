@@ -31,6 +31,10 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: 'tag_id',
       as: 'bookmarkTags'
     });
+    Bookmark.hasOne(models.User, {
+      sourceKey: 'user_id',
+      foreignKey: 'id'
+    });
   };
   return Bookmark;
 };

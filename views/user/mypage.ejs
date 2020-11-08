@@ -28,7 +28,7 @@
   <%- include('../template/header'); %>
   <!--/header-->
 
-  <section id="modalArea1" class="modalArea">
+  <div id="modalArea1" class="modalArea">
     <div id="modalBg1" class="modalBg"></div>
     <div class="modalWrapper">
 
@@ -41,29 +41,78 @@
         </div>
       </section>
     </div>
-  </section>
+  </div>
+
+  <div id="modalArea2" class="modalArea">
+    <div id="modalBg2" class="modalBg"></div>
+    <div class="modalWrapper">
+
+      <section class="modal-container bg1">
+        <div class="modal-container user-list">
+          <ul>
+            <% followLists.forEach(followList => { %>
+            <li class="flex-container flex-between">
+              <p class="tc3 user-list-name bold"><a href="<%= '/user/' + followList.User.id %>"><%= followList.User.name %></a></p>
+              <form action="<%= '/follow/remove/' + followList.User.id %>" method="post">
+                <p>
+                  <input type="submit" value="フォロー解除">
+                </p>
+              </form>
+            </li>
+            <% }); %>
+          </ul>
+        </div>
+      </section>
+      <div id="closeModal2" class="closeModal">
+        ×
+      </div>
+    </div>
+  </div>
+
+  <div id="modalArea3" class="modalArea">
+    <div id="modalBg3" class="modalBg"></div>
+    <div class="modalWrapper">
+
+      <section class="modal-container bg1">
+        <div class="modal-container user-list">
+          <ul>
+            <% groupLists.forEach(groupList => { %>
+            <li class="flex-container flex-between">
+              <p class="tc3 user-list-name bold"><a href="<%= '/group/' + groupList.id %>"><%= groupList.name %></a></p>
+              <p>オーナー:<a href="<%= '/user/' + groupList.User.id %>" class="tc5"><%= groupList.User.name %></a></p>
+            </li>
+            <% }); %>
+          </ul>
+        </div>
+      </section>
+      <div id="closeModal3" class="closeModal">
+        ×
+      </div>
+    </div>
+  </div>
 
   <section class="user-container flex-container flex-colmn flex-center tc1 bg2">
     <div class="flex-container">
       <p><i class="fas fa-user"></i></p>
       <div class="user-name flex-container flex-colmn flex-center">
         <h2 class="tc5"><%= current_user.name %></h2>
-        <p>UserID:<%= current_user.id %></p>
+        <p>ブックマーク(<%= bookmarkCount %>)</p>
       </div>
     </div>
     <ul class="flex-container">
       <li>
-        <p><a class="bg3" href=""><i class="fas fa-user-plus"></i>フォロー(5)</a></p>
+        <p><a id="openModal2" class="bg3"><i class="fas fa-user-plus"></i>フォロー(<%= followCount %>)</a></p>
       </li>
       <li>
-        <p><a class="bg3" href=""><i class="fas fa-users"></i>グループ(5)</a></p>
+        <p><a id="openModal3" class="bg3"><i class="fas fa-users"></i>グループ(<%= groupCount %>)</a></p>
       </li>
     </ul>
   </section>
 
   <nav class="user-menu">
     <ul>
-      <li><a href="">タイムラインの設定</a></li>
+      <li><a href="/timeline/list">タイムラインの設定</a></li>
+      <li><a href="/group/create">グループの作成</a></li>
       <li><a id="openModal1">ユーザー名の変更</a></li>
       <li><a href="/logout">ログアウト</a></li>
     </ul>

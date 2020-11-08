@@ -77,9 +77,17 @@ textarea {
 }
 
 .wrapper {
+  width: 100%;
   height: 100vh;
   overflow: scroll;
   padding-bottom: 3rem;
+}
+
+.bookmark-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  padding-bottom: 5rem;
 }
 
 .header {
@@ -123,14 +131,14 @@ textarea {
 }
 
 .swiper-pagination-bullet {
-  background-color: #37AB9D;
+  background-color: #FFC042;
   opacity: 0.5;
   width: 12px;
   height: 12px;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #37AB9D;
+  background-color: #FFC042;
   opacity: 1;
   width: 20px;
   height: 20px;
@@ -184,8 +192,7 @@ textarea {
 .top-container h1 {
   margin-bottom: 1rem;
   font-size: 5rem;
-  font-family: 'Arvo',
-    serif;
+  font-family: 'Goldman', cursive;
   text-align: center;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
 }
@@ -271,36 +278,95 @@ textarea {
 
 /*timeline*/
 
-.timeline-container {
+.timeline-create {
+  margin-top: 1rem;
+}
+
+.tf-container {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.tf-container h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.tf-container .tf-checkbox label {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.tf-container label input[type="checkbox"] {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.tf-checkbox {
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.tf-box {
+  flex-wrap: wrap;
+}
+
+.tf-option {
+  margin-bottom: 1rem;
+}
+
+.tf-tag {
   margin-top: 0.5rem;
-  font-size: 0.8rem;
-}
-
-.timeline-container h3 {
-  padding: 0.5rem 1rem;
-}
-
-.timeline-url {
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #E9E9E9;
-}
-
-.timeline-tag {
-  padding: 0.5rem 1rem 0;
-}
-
-.timeline-memo {
-  padding: 1rem 1rem;
-}
-
-.timeline-btn {
-  padding: 0 1rem 0.5rem;
-  border-bottom: 1px solid #E9E9E9;
   text-align: right;
 }
 
-.timeline-footer {
-  padding: 0.5rem 1rem;
+.tf-container input[type="text"] {
+  width: 100%;
+  border: 1px solid #E9E9E9;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #586365;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+.tf-container input[type="submit"] {
+  width: 9rem;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 4px;
+}
+
+.te-box {
+  margin-bottom: 1rem;
+}
+
+.te-box h3 {
+  margin-bottom: 0.2rem;
+}
+
+.te-btnArea {}
+
+.te-btn {
+  display: block;
+  width: 9rem;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 4px;
+}
+
+.te-list {
+  flex-wrap: wrap;
+}
+
+.te-list p {
+  margin-right: 1rem;
 }
 
 /*/timeline*/
@@ -340,6 +406,30 @@ textarea {
   font-size: 1.2rem;
 }
 
+.user-list ul li {
+  align-items: center;
+  border-bottom: 1px solid #E9E9E9;
+  margin-top: 1rem;
+}
+
+.user-list ul li p {
+  padding-bottom: 1rem;
+}
+
+.user-list ul li input[type="submit"] {
+  padding: 0.5rem;
+  border: 1px solid #586365;
+  border-radius: 4px;
+}
+
+.user-list-name p {
+  align-items: center;
+}
+
+.user-list-name p {
+  font-size: 1.2rem;
+}
+
 .user-menu ul li a {
   display: block;
   width: 100%;
@@ -347,8 +437,14 @@ textarea {
   border-bottom: 1px solid #E9E9E9;
 }
 
-.user-menu ul li:first-child a {
-  padding-top: 2rem;
+.user-menu ul li:first-of-type a {
+  margin-top: 1rem;
+}
+
+.user-menu input[type="submit"] {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #E9E9E9;
 }
 
 .user-edit-form input[type="text"] {
@@ -374,6 +470,88 @@ textarea {
 }
 
 /*/user*/
+
+/*group*/
+
+.group-container {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.group-container h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.group-container input[type="text"],
+.group-container textarea {
+  border: 1px solid #E9E9E9;
+  width: 100%;
+  padding: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+.group-container div {
+  margin-bottom: 1rem;
+}
+
+.group-container input[type="submit"] {
+  width: 9rem;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.group-top-container {
+  height: 30vh;
+}
+
+.group-top-container .fa-users {
+  font-size: 4rem;
+  margin-right: 1rem;
+}
+
+.group-top-container div {
+  text-align: center;
+}
+
+.group-top-container div h2 {
+  margin-bottom: 0.2rem;
+}
+
+.group-main-container h2 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.group-main-title {
+  border-bottom: 1px solid #E9E9E9;
+  padding: 1rem 2rem;
+}
+
+.group-main-owner {
+  padding: 1rem 2rem 0;
+}
+
+.group-main-text {
+  padding: 1rem 2rem 0;
+}
+
+.group-main-btn {
+  padding: 1rem 2rem 0;
+}
+
+.group-main-container input[type="submit"] {
+  width: 9rem;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+/*/group*/
 
 /*bookmark*/
 
@@ -404,6 +582,14 @@ textarea {
 
 .edit p {
   margin-right: 1rem;
+}
+
+.bookmark-user {
+  margin-top: 1rem;
+}
+
+.bookmark-user p:first-child {
+  margin-right: 0.5rem;
 }
 
 .bookmark-container {
@@ -438,7 +624,7 @@ textarea {
 }
 
 .bf-memo {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .bf-public {

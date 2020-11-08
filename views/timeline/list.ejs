@@ -1,0 +1,117 @@
+<% const localmeta = {
+  title: 'タイムライン | ASB',
+  desc: 'desc'
+};
+%>
+
+<% const status = {
+  nav1:'inactive',
+  nav2:'inactive',
+  nav3:'inactive',
+  nav4:'inactive'
+};
+%>
+
+<!--common-->
+<%- include('../partials/header', {meta: localmeta}); %>
+<!--/common-->
+
+<!--bottomNav-->
+<%- include('../partials/bottomNav', {status: status}); %>
+<!--/bottomNav-->
+
+
+<div class="swiper-container swiper1  bg5">
+  <div class="swiper-wrapper">
+
+    <% if(max_number === 0) {%>
+
+    <div class="swiper-slide">
+      <div class="bookmark-wrapper">
+        <!--header-->
+        <%- include('../template/header'); %>
+        <!--/header-->
+        <div>
+
+          <section class="bookmark-container shadow bg1">
+            <h2 class="bold">タイムラインがありません</h2>
+            <p class="timeline-create tc3">
+              <a href="<%= '/timeline/create/' + 1 %>">新規作成</a>
+            </p>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <% } else { %>
+
+    <% for (let i = 1; i < max_number + 1; i++) { %>
+
+    <div class="swiper-slide">
+      <div class="wrapper bg5">
+
+        <!--header-->
+        <%- include('../template/header'); %>
+        <!--/header-->
+        <section class="tf-container bg1 shadow">
+
+          <h2 class="bold">タイムライン情報</h2>
+
+          <div class="te-box">
+            <h3>タイムライン名</h3>
+            <div class="">
+              <p class="bold"><%= timeline[i].name%></p>
+            </div>
+          </div>
+
+          <div class="te-box">
+            <h3>グループ</h3>
+            <div class="te-list flex-container">
+              <% timeline[i].groups.forEach(group => {%>
+              <p class="te-list tc3"><%= group.group_name %></p>
+              <% }); %>
+            </div>
+          </div>
+
+          <div class="te-box">
+            <h3>フォローユーザー</h3>
+            <div class="te-list flex-container">
+              <% timeline[i].follows.forEach(follow => {%>
+              <p class="te-list tc3"><%= follow.followedUser_name %></p>
+              <% }); %>
+            </div>
+          </div>
+
+          <div class="te-box">
+            <h3>タグ</h3>
+            <div class="te-list flex-container">
+              <% timeline[i].tags.forEach(tag => {%>
+              <p>#<span class="tc5"><%= tag %></span></p>
+              <% }); %>
+            </div>
+          </div>
+
+          <div class="flex-container flex-center flex-between">
+            <p><a class="bg3 tc1 te-btn" href="<%= '/timeline/edit/' + i %>">編集</a></p>
+            <form action="<%= '/timeline/delete/' + i %>" method="post">
+              <p><input class="bg2 tc1 te-btn" type="submit" value="削除"></p>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <% } %>
+
+    <% } %>
+
+  </div>
+  <!-- pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- /pagination -->
+</div>
+
+<!--common-->
+<%- include('../partials/footer'); %>
+<!--/common-->

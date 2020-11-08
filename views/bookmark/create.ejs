@@ -74,6 +74,7 @@
 
     <section class="modal-container bg1">
       <nav class="modal-container">
+        <% if(user_tags){ %>
         <ul class="bf-tags flex-container">
           <%  for (let i = 0; i < user_tags.length && i < 20; i++) { %>
           <li>
@@ -81,6 +82,7 @@
           </li>
           <% } %>
         </ul>
+        <% } %>
       </nav>
     </section>
 

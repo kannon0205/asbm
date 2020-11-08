@@ -24,7 +24,7 @@
   <p><i class="fas fa-bars"></i></p>
 </div>
 
-<div class="wrapper bg5">
+<div class="bookmark-wrapper bg5">
   <!--header-->
   <%- include('../template/header'); %>
   <!--/header-->
@@ -40,7 +40,7 @@
       <p class="memo"><%= user_bookmark.memo %></p>
       <p>
         <% user_bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
-        #<a class="tc5" href=""><%= bookmarkTag.name -%></a>
+        #<a class="tc5" href="<%= '/tag/' + bookmarkTag.id %>"><%= bookmarkTag.name -%></a>
         <% }); %>
       </p>
       <div class="edit flex-container">

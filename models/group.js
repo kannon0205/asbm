@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Tag extends Model {
+  class Group extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,23 +13,24 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  Tag.init({
-    name: DataTypes.STRING
+  Group.init({
+    name: DataTypes.STRING,
+    memo: DataTypes.STRING,
+    owner: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Tag',
+    modelName: 'Group',
   });
-  Tag.associate = function (models) {
-    Tag.belongsToMany(models.Bookmark, {
-      through: models.Tag_map,
-      foreignKey: 'tag_id',
-      otherKey: 'bookmark_id',
-      as: 'bookmarkTags'
+  Group.associate = function (models) {
+    Group.hasMany(models.Group_map, {
+      sourceKey: 'id',
+      foreignKey: 'group_id'
     });
-    Tag.hasMany(models.Tag_map, {
-      foreignKey: 'tag_id',
-      sourceKey: 'id'
+    Group.hasOne(models.User, {
+      sourceKey: 'owner',
+      foreignKey: 'id'
     });
   };
-  return Tag;
+
+  return Group;
 };

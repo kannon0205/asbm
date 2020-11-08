@@ -1,0 +1,55 @@
+<% const localmeta = {
+  title: 'マイブックマーク | ASB',
+  desc: 'desc'
+};
+%>
+
+<% const status = {
+  nav1:'inactive',
+  nav2:'inactive',
+  nav3:'inactive',
+  nav4:'inactive'
+};
+%>
+
+<!--common-->
+<%- include('../partials/header', {meta: localmeta}); %>
+<!--/common-->
+
+<!--bottomNav-->
+<%- include('../partials/bottomNav', {status: status}); %>
+<!--/bottomNav-->
+
+<div class="bookmark-wrapper bg5">
+  <!--header-->
+  <%- include('../template/header'); %>
+  <!--/header-->
+  <section>
+    <% bookmarks.forEach((bookmark) => { %>
+
+    <section class="bookmark-container shadow bg1">
+      <div class="ogp">
+        <h2 class="title bold"><%= bookmark.title %></h2>
+        <p class="url tc3"><a href="<%= bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= bookmark.url %></a></p>
+        <p><%= bookmark.site_name %></p>
+      </div>
+      <p class="memo"><%= bookmark.memo %></p>
+      <p>
+        <% bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
+        #<a class="tc5" href="<%= '/tag/' + bookmarkTag.id %>"><%= bookmarkTag.name -%></a>
+        <% }); %>
+      </p>
+      <div class="bookmark-user flex-container">
+        <p><i class="fas fa-user"></i></p>
+        <p class="tc3"><a href="<%= '/user/' + bookmark.User.id %>"><%= bookmark.User.name %></a></p>
+      </div>
+    </section>
+
+    <% }); %>
+  </section>
+
+</div>
+
+<!--common-->
+<%- include('../partials/footer'); %>
+<!--/common-->
