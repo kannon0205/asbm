@@ -12,7 +12,7 @@ const http = require('http');
 //本番用
 
 
-Sequelize インスタンス
+//Sequelize インスタンス
 const sequelize = new Sequelize({
   dialect: 'postgres',
   timezone: '+09:00'
@@ -22,7 +22,7 @@ exports.pool = pg.Pool({
   host: process.env.ENV_HOST,
   database: process.env.Database,
   user: process.env.USER,
-  port: process.env.PORT,
+  port: 5432,
   password: process.env.PASSWORD,
 });
 
