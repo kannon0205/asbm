@@ -6,20 +6,6 @@ const Op = Sequelize.Op;
 const config = require('./config/config');
 const PORT = process.env.PORT || 5000;
 
-//const {
-//  Client
-//} = require('pg');
-//
-//const client = new Client({
-//  user: 'wpobiygbdpldpp', // DB のユーザー名を指定
-//  host: 'ec2-34-237-236-32.compute-1.amazonaws.com',
-//  database: 'd2etja7oiqd6v1',
-//  password: 'f96b2f796177a9e07035d146bef05d22e7c3b5e61175760ad4f836f9b9b1c200', // DB のパスワードを指定
-//  post: 5432
-//})
-//
-//client.connect();
-
 //本番用
 const http = require('http');
 //本番用
@@ -27,8 +13,8 @@ const http = require('http');
 
 // Sequelize インスタンス
 const sequelize = new Sequelize({
-  dialect: 'mysql',
-  //  timezone: '+09:00'
+  dialect: 'postgres',
+  timezone: '+09:00'
 });
 
 
@@ -109,22 +95,6 @@ const authMiddleware = (req, res, next) => {
     res.redirect(302, '/login');
   }
 };
-
-//const connection = mysql.createConnection({
-//  host: 'localhost',
-//  user: 'root',
-//  password: 'ZgYddWr3FWP5',
-//  database: 'asb',
-//  timezone: "+09:00"
-//});
-//
-//connection.connect((err) => {
-//  if (err) {
-//    console.log('error connecting: ' + err.stack);
-//    return;
-//  }
-//  console.log('success');
-//});
 
 //-----------------------------------------//
 
