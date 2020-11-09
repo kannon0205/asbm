@@ -4,7 +4,10 @@ const app = express();
 //const mysql = require('mysql');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+
 const config = require('./config/config.js');
+//もしかしていらないかも
+
 const PORT = process.env.PORT || 5000;
 
 //本番用
@@ -48,7 +51,7 @@ const Test = require('./models').Test;
 app.use(express.static('public'));
 
 //暗号化につかうキー
-const APP_KEY = 'YOUR-SECRET-KEY';
+const APP_KEY = process.env.APP_KEY;
 
 
 //ミドルウェア
@@ -59,7 +62,7 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(flash());
 app.use(session({
-  secret: 'YOUR-SECRET-STRING',
+  secret: process.env.APP_KEY,
   resave: true,
   saveUninitialized: true
 }));
