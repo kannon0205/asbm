@@ -4,7 +4,7 @@ const app = express();
 //const mysql = require('mysql');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-const config = require('./config/config');
+const config = require('./config/config.js')[env];
 const PORT = process.env.PORT || 5000;
 
 //本番用
