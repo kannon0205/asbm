@@ -1,5 +1,5 @@
 <% const localmeta = {
-  title: 'マイページ | ASB',
+  title: 'マイページ | ASBM',
   desc: 'desc'
 };
 %>
@@ -24,99 +24,103 @@
 
 <div class="wrapper">
 
-  <!--header-->
-  <%- include('../template/header'); %>
-  <!--/header-->
-
-  <div id="modalArea1" class="modalArea">
-    <div id="modalBg1" class="modalBg"></div>
-    <div class="modalWrapper">
-
-      <section class="modal-container bg1">
-        <div class="modal-container user-edit-form">
-          <form action="/user/<%= current_user.id %>/edit" method="post">
-            <p><input type="text" name="name" value="<%= current_user.name %>"></p>
-            <p><input class="tc1 bg3" type="submit" value="変更"><input class="tc1 bg2" id="closeModal1" type="button" value="取り消し"></p>
-          </form>
-        </div>
-      </section>
+  <section>
+    <!--header-->
+    <div class="header tc1 shadow">
+      <h1>マイページ</h1>
     </div>
-  </div>
+    <!--/header-->
 
-  <div id="modalArea2" class="modalArea">
-    <div id="modalBg2" class="modalBg"></div>
-    <div class="modalWrapper">
+    <div id="modalArea1" class="modalArea">
+      <div id="modalBg1" class="modalBg"></div>
+      <div class="modalWrapper">
 
-      <section class="modal-container bg1">
-        <div class="modal-container user-list">
-          <ul>
-            <% followLists.forEach(followList => { %>
-            <li class="flex-container flex-between">
-              <p class="tc3 user-list-name bold"><a href="<%= '/user/' + followList.User.id %>"><%= followList.User.name %></a></p>
-              <form action="<%= '/follow/remove/' + followList.User.id %>" method="post">
-                <p>
-                  <input type="submit" value="フォロー解除">
-                </p>
-              </form>
-            </li>
-            <% }); %>
-          </ul>
-        </div>
-      </section>
-      <div id="closeModal2" class="closeModal">
-        ×
+        <section class="modal-container bg1">
+          <div class="modal-container user-edit-form">
+            <form action="/user/<%= current_user.id %>/edit" method="post">
+              <p><input type="text" name="name" value="<%= current_user.name %>"></p>
+              <p><input class="tc1 bg3" type="submit" value="変更"><input class="tc1 bg2" id="closeModal1" type="button" value="取り消し"></p>
+            </form>
+          </div>
+        </section>
       </div>
     </div>
-  </div>
 
-  <div id="modalArea3" class="modalArea">
-    <div id="modalBg3" class="modalBg"></div>
-    <div class="modalWrapper">
+    <div id="modalArea2" class="modalArea">
+      <div id="modalBg2" class="modalBg"></div>
+      <div class="modalWrapper">
 
-      <section class="modal-container bg1">
-        <div class="modal-container user-list">
-          <ul>
-            <% groupLists.forEach(groupList => { %>
-            <li class="flex-container flex-between">
-              <p class="tc3 user-list-name bold"><a href="<%= '/group/' + groupList.id %>"><%= groupList.name %></a></p>
-              <p>オーナー:<a href="<%= '/user/' + groupList.User.id %>" class="tc5"><%= groupList.User.name %></a></p>
-            </li>
-            <% }); %>
-          </ul>
+        <section class="modal-container bg1">
+          <div class="modal-container user-list">
+            <ul>
+              <% followLists.forEach(followList => { %>
+              <li class="flex-container flex-between">
+                <p class="tc3 user-list-name bold"><a href="<%= '/user/' + followList.User.id %>"><%= followList.User.name %></a></p>
+                <form action="<%= '/follow/remove/' + followList.User.id %>" method="post">
+                  <p>
+                    <input type="submit" value="フォロー解除">
+                  </p>
+                </form>
+              </li>
+              <% }); %>
+            </ul>
+          </div>
+        </section>
+        <div id="closeModal2" class="closeModal">
+          ×
         </div>
-      </section>
-      <div id="closeModal3" class="closeModal">
-        ×
       </div>
     </div>
-  </div>
 
-  <section class="user-container flex-container flex-colmn flex-center tc1 bg2">
-    <div class="flex-container">
-      <p><i class="fas fa-user"></i></p>
-      <div class="user-name flex-container flex-colmn flex-center">
-        <h2 class="tc5"><%= current_user.name %></h2>
-        <p>ブックマーク(<%= bookmarkCount %>)</p>
+    <div id="modalArea3" class="modalArea">
+      <div id="modalBg3" class="modalBg"></div>
+      <div class="modalWrapper">
+
+        <section class="modal-container bg1">
+          <div class="modal-container user-list">
+            <ul>
+              <% groupLists.forEach(groupList => { %>
+              <li class="flex-container flex-between">
+                <p class="tc3 user-list-name bold"><a href="<%= '/group/' + groupList.id %>"><%= groupList.name %></a></p>
+                <p>オーナー:<a href="<%= '/user/' + groupList.User.id %>" class="tc5"><%= groupList.User.name %></a></p>
+              </li>
+              <% }); %>
+            </ul>
+          </div>
+        </section>
+        <div id="closeModal3" class="closeModal">
+          ×
+        </div>
       </div>
     </div>
-    <ul class="flex-container">
-      <li>
-        <p><a id="openModal2" class="bg3"><i class="fas fa-user-plus"></i>フォロー(<%= followCount %>)</a></p>
-      </li>
-      <li>
-        <p><a id="openModal3" class="bg3"><i class="fas fa-users"></i>グループ(<%= groupCount %>)</a></p>
-      </li>
-    </ul>
+
+    <section class="user-container flex-container flex-colmn flex-center tc1 bg2">
+      <div class="flex-container">
+        <p><i class="fas fa-user"></i></p>
+        <div class="user-name flex-container flex-colmn flex-center">
+          <h2 class="tc5"><%= current_user.name %></h2>
+          <p>ブックマーク(<%= bookmarkCount %>)</p>
+        </div>
+      </div>
+      <ul class="flex-container">
+        <li>
+          <p><a id="openModal2" class="bg3"><i class="fas fa-user-plus"></i>フォロー(<%= followCount %>)</a></p>
+        </li>
+        <li>
+          <p><a id="openModal3" class="bg3"><i class="fas fa-users"></i>グループ(<%= groupCount %>)</a></p>
+        </li>
+      </ul>
+    </section>
+
+    <nav class="user-menu">
+      <ul>
+        <li><a href="/timeline/list">タイムラインの設定</a></li>
+        <li><a href="/group/create">グループの作成</a></li>
+        <li><a id="openModal1">ユーザー名の変更</a></li>
+        <li><a href="/logout">ログアウト</a></li>
+      </ul>
+    </nav>
   </section>
-
-  <nav class="user-menu">
-    <ul>
-      <li><a href="/timeline/list">タイムラインの設定</a></li>
-      <li><a href="/group/create">グループの作成</a></li>
-      <li><a id="openModal1">ユーザー名の変更</a></li>
-      <li><a href="/logout">ログアウト</a></li>
-    </ul>
-  </nav>
 
 </div>
 
