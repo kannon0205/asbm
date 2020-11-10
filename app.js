@@ -2188,8 +2188,7 @@ app.get('/', authMiddleware, (req, res) => {
                   owner_id: req.user.id
                 }
               }
-            ],
-            //            group: 'Tag_map.bookmark_id'
+            ]
           }).then(result1 => {
 
             const jsonTags = JSON.stringify(result1);
@@ -2218,8 +2217,7 @@ app.get('/', authMiddleware, (req, res) => {
                     owner_id: req.user.id
                   }
                 }
-          ],
-              //              group: 'Group_map.user_id'
+          ]
             }).then(result2 => {
 
               const jsonGroups = JSON.stringify(result2);
@@ -2243,8 +2241,7 @@ app.get('/', authMiddleware, (req, res) => {
                       owner_id: req.user.id
                     }
                   }
-                ],
-                //                group: 'followedUser_id'
+                ]
               }).then(result3 => {
 
                 const jsonFollows = JSON.stringify(result3);
@@ -2291,17 +2288,32 @@ app.get('/', authMiddleware, (req, res) => {
 
                 }).then(() => {
 
-                  if (i === maxNumber) {
+                  Timeline.findOne({
+                    where: {
+                      number: i,
+                      owner_id: req.user.id
+                    }
+                  }).then(result5 => {
 
-                    res.render('timeline/index.ejs', {
-                      //渡す値
-                      current_user: req.user,
-                      max_number: maxNumber,
-                      timeline: timeline
-                    });
+                    const jsonName = JSON.stringify(result5);
+                    const name = JSON.parse(jsonName);
 
-                  }
+                    timeline[i].name = name.name
 
+                  }).then(() => {
+
+                    if (i === maxNumber) {
+
+                      res.render('timeline/index.ejs', {
+                        //渡す値
+                        current_user: req.user,
+                        max_number: maxNumber,
+                        timeline: timeline
+                      });
+
+                    }
+
+                  });
                 });
 
               }); //TimelineFollowからuser_idを取得する

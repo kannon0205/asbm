@@ -1,5 +1,5 @@
 <% const localmeta = {
-  title: 'マイブックマーク | ASB',
+  title: 'ブックマーク一覧 | ASBM',
   desc: 'desc'
 };
 %>
@@ -21,10 +21,13 @@
 <!--/bottomNav-->
 
 <div class="bookmark-wrapper bg5">
-  <!--header-->
-  <%- include('../template/header'); %>
-  <!--/header-->
   <section>
+  <!--header-->
+  <div class="header tc1 shadow">
+    <h1>ブックマーク一覧</h1>
+  </div>
+  <!--/header-->
+  
     <% bookmarks.forEach((bookmark) => { %>
 
     <section class="bookmark-container shadow bg1">

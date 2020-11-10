@@ -1,5 +1,5 @@
 <% const localmeta = {
-  title: 'タイムライン | ASB',
+  title: 'タイムライン | ASBM',
   desc: 'desc'
 };
 %>
@@ -28,19 +28,25 @@
 
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
-        <!--header-->
-        <%- include('../template/header'); %>
-        <!--/header-->
-        <div>
+        <section>
 
-          <section class="bookmark-container shadow bg1">
-            <h2 class="bold">タイムラインがありません</h2>
-            <p class="timeline-create tc3">
-              <a href="<%= '/timeline/create/' + 1 %>">新規作成</a>
-            </p>
-          </section>
+          <!--header-->
+          <div class="header tc1 shadow">
+            <h2>タイムライン1</h2>
+          </div>
+          <!--/header-->
+          <div>
 
-        </div>
+            <div class="bookmark-container shadow bg1">
+              <h2 class="bold">タイムラインがありません</h2>
+              <p class="timeline-create tc3">
+                <a href="<%= '/timeline/create/' + 1 %>">新規作成</a>
+              </p>
+            </div>
+
+          </div>
+
+        </section>
       </div>
     </div>
 
@@ -52,7 +58,9 @@
       <div class="bookmark-wrapper">
 
         <!--header-->
-        <%- include('../template/header'); %>
+        <div class="header tc1 shadow">
+          <h2><%= timeline[i].name %></h2>
+        </div>
         <!--/header-->
         <div>
           <% timeline[i].bookmark.forEach((bookmark) => { %>
@@ -83,14 +91,16 @@
 
     <% } %>
 
+    <% const next = max_number + 1 %>
+
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
         <!--header-->
-        <%- include('../template/header'); %>
+        <div class="header tc1 shadow">
+          <h2><%= 'タイムライン' + next %></h2>
+        </div>
         <!--/header-->
         <div>
-
-          <% const next = max_number + 1 %>
 
           <section class="bookmark-container shadow bg1">
             <h2 class="bold">新規タイムライン</h2>

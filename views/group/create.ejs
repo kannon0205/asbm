@@ -1,5 +1,5 @@
 <% const localmeta = {
-  title: 'グループ作成 | ASB',
+  title: '新規グループを作成 | ASBM',
   desc: 'desc'
 };
 %>
@@ -22,11 +22,14 @@
 
 <div class="wrapper bg6">
 
+<section>
   <!--header-->
-  <%- include('../template/header'); %>
+  <div class="header tc1 shadow">
+    <h1>新規グループを作成</h1>
+  </div>
   <!--/header-->
   <form action="/group/create" method="post">
-    <section class="group-container  gf bg1 shadow">
+    <div class="group-container  gf bg1 shadow">
       <h1 class="bold">グループの情報</h1>
       <div>
         <p><label for="group-name">グループ名</label></p>
@@ -54,8 +57,9 @@
       <div class="flex-container flex-center">
         <input class="tc1 bg7 shadow" type="submit" value="登録">
       </div>
-    </section>
+    </div>
   </form>
+</section>
 </div>
 
 <!--common-->

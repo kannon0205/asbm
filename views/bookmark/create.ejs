@@ -1,5 +1,5 @@
 <% const localmeta = {
-  title: 'マイページ | ASB',
+  title: '新規ブックマーク作成 | ASBM',
   desc: 'desc'
 };
 %>
@@ -21,12 +21,14 @@
 <!--/bottomNav-->
 
 <div class="wrapper bg6">
-
+<section>
   <!--header-->
-  <%- include('../template/header'); %>
+  <div class="header tc1 shadow">
+    <h1>新規ブックマーク作成</h1>
+  </div>
   <!--/header-->
   <form action="/bookmark/create" method="post">
-    <section class="bookmark-container  bf bg1 shadow">
+    <div class="bookmark-container  bf bg1 shadow">
       <div class="bf-detail">
         <h2 class="bold">ブックマーク情報</h2>
         <p><label for="bf-url">アドレス</label></p>
@@ -64,8 +66,9 @@
       <div class="flex-container flex-center">
         <input class="tc1 bg7 shadow" type="submit" value="登録">
       </div>
-    </section>
+    </div>
   </form>
+  </section>
 </div>
 
 <div id="modalArea1" class="modalArea">

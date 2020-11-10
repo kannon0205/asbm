@@ -1,5 +1,5 @@
 <% const localmeta = {
-  title: 'マイページ | ASB',
+  title: '新規タイムライン作成 | ASBM',
   desc: 'desc'
 };
 %>
@@ -22,11 +22,14 @@
 
 <div class="wrapper bg5">
 
+<section>
   <!--header-->
-  <%- include('../template/header'); %>
+  <div class="header tc1 shadow">
+    <h1>新規タイムライン作成</h1>
+  </div>
   <!--/header-->
   <form action="<%= '/timeline/create/' + params %>" method="post">
-    <section class="tf-container bg1 shadow">
+    <div class="tf-container bg1 shadow">
       <h2 class="bold">タイムライン情報</h2>
       <div class="tf-option">
         <p><label for="name">タイムライン名</label></p>
@@ -63,8 +66,10 @@
         </div>
       </div>
       <p class="flex-container flex-center"><input class="bg7 tc1" type="submit" value="登録"></p>
-    </section>
+    </div>
   </form>
+  </section>
+  
 </div>
 
 <div id="modalArea1" class="modalArea">
