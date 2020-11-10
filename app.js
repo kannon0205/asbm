@@ -2189,7 +2189,7 @@ app.get('/', authMiddleware, (req, res) => {
                 }
               }
             ],
-            group: 'Tag_map.bookmark_id'
+            //            group: 'Tag_map.bookmark_id'
           }).then(result1 => {
 
             const jsonTags = JSON.stringify(result1);
@@ -2219,7 +2219,7 @@ app.get('/', authMiddleware, (req, res) => {
                   }
                 }
           ],
-              group: 'Group_map.user_id'
+              //              group: 'Group_map.user_id'
             }).then(result2 => {
 
               const jsonGroups = JSON.stringify(result2);
@@ -2244,7 +2244,7 @@ app.get('/', authMiddleware, (req, res) => {
                     }
                   }
                 ],
-                group: 'followedUser_id'
+                //                group: 'followedUser_id'
               }).then(result3 => {
 
                 const jsonFollows = JSON.stringify(result3);
