@@ -12,9 +12,9 @@
     height: calc(100vh - 3rem);
   }
 
-  .bottom-nav {
+  .bottom-nav-wide {
     width: 600px;
-    left: calc(50% - 600px/2);
+    margin: 0 auto;
   }
 
   /*
