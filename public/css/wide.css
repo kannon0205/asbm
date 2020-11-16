@@ -8,6 +8,9 @@
     margin: 0 auto;
   }
 
+  .wide {
+    padding-bottom: 1rem;
+  }
 
 }
 
