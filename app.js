@@ -779,7 +779,9 @@ app.get('/mybookmark/edit/:bookmark_id', authMiddleware, (req, res) => {
 
       if (user_bookmark.user_id === req.user.id) {
 
-        const publicString = user_bookmark.public + ''
+        const publicString = user_bookmark.public + '';
+
+        console.log(user_bookmark.memo);
 
         res.render('bookmark/edit.ejs', {
           current_user: req.user,
