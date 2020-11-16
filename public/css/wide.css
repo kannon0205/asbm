@@ -12,6 +12,11 @@
     height: calc(100vh - 3rem);
   }
 
+  .bottom-nav {
+    width: 600px;
+    left: calc(50% - 600px/2);
+  }
+
   /*
   .fixed-btn {
     left: 20%;
