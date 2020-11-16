@@ -756,10 +756,3 @@ textarea {
 }
 
 /*/bookmark-modal*/
-
-@media screen and (min-width:600px) {
-  .wrapper {
-    width: 600px;
-    margin: 0 auto;
-  }
-}

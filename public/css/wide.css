@@ -1,7 +1,10 @@
 /**/
 
 @media screen and (min-width:600px) {
-  .wrapper {
+
+  .wrapper,
+  .top-wrapper,
+  .bookmark-wrapper {
     width: 600px;
     margin: 0 auto;
   }
