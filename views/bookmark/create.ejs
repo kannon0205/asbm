@@ -21,54 +21,56 @@
 <!--/bottomNav-->
 
 <div class="wrapper bg6">
-<section>
-  <!--header-->
-  <div class="header tc1 shadow">
-    <h1>新規ブックマーク作成</h1>
+  <div class="wide">
+    <section>
+      <!--header-->
+      <div class="header tc1 shadow">
+        <h1>新規ブックマーク作成</h1>
+      </div>
+      <!--/header-->
+      <form action="/bookmark/create" method="post">
+        <div class="bookmark-container  bf bg1 shadow">
+          <div class="bf-detail">
+            <h2 class="bold">ブックマーク情報</h2>
+            <p><label for="bf-url">アドレス</label></p>
+            <input id="bf-url" type="text" name="url" value="<%= url %>">
+            <% if(resultUrl) { %>
+            <div class="bf-alert">
+              <%= resultUrl.msg %>
+            </div>
+            <% } %>
+            <% if(correctMessage) { %>
+            <div class="bf-alert">
+              <%= correctMessage %>
+            </div>
+            <% } %>
+            <p class="bf-memo"><label for="bf-memo">メモ</label></p>
+            <textarea id="bf-memo" rows="5" name="memo" value="<%= memo %>"></textarea>
+            <% if(resultMemo) { %>
+            <div class="bf-alert">
+              <%= resultMemo.msg %>
+            </div>
+            <% } %>
+            <div class="bf-public flex-container">
+              <p><label><input type="radio" name="public" value="1" <% if(public === '1') { %>checked<% } %>>公開</label></p>
+              <p><label><input type="radio" name="public" value="2" <% if(public === '2') { %>checked<% } %>>非公開</label></p>
+            </div>
+          </div>
+          <h2 class="bold">タグを追加する</h2>
+          <input id="tags" type="text" name="tags" value="<%= tags %>">
+          <% if(resultTags) { %>
+          <div class="bf-alert">
+            <%= resultTags.msg %>
+          </div>
+          <% } %>
+          <p class="bf-old tc3"><span id="openModal1">最近使ったタグ</span></p>
+          <div class="flex-container flex-center">
+            <input class="tc1 bg7 shadow" type="submit" value="登録">
+          </div>
+        </div>
+      </form>
+    </section>
   </div>
-  <!--/header-->
-  <form action="/bookmark/create" method="post">
-    <div class="bookmark-container  bf bg1 shadow">
-      <div class="bf-detail">
-        <h2 class="bold">ブックマーク情報</h2>
-        <p><label for="bf-url">アドレス</label></p>
-        <input id="bf-url" type="text" name="url" value="<%= url %>">
-        <% if(resultUrl) { %>
-        <div class="bf-alert">
-          <%= resultUrl.msg %>
-        </div>
-        <% } %>
-        <% if(correctMessage) { %>
-        <div class="bf-alert">
-          <%= correctMessage %>
-        </div>
-        <% } %>
-        <p class="bf-memo"><label for="bf-memo">メモ</label></p>
-        <textarea id="bf-memo" rows="5" name="memo" value="<%= memo %>"></textarea>
-        <% if(resultMemo) { %>
-        <div class="bf-alert">
-          <%= resultMemo.msg %>
-        </div>
-        <% } %>
-        <div class="bf-public flex-container">
-          <p><label><input type="radio" name="public" value="1" <% if(public === '1') { %>checked<% } %>>公開</label></p>
-          <p><label><input type="radio" name="public" value="2" <% if(public === '2') { %>checked<% } %>>非公開</label></p>
-        </div>
-      </div>
-      <h2 class="bold">タグを追加する</h2>
-      <input id="tags" type="text" name="tags" value="<%= tags %>">
-      <% if(resultTags) { %>
-      <div class="bf-alert">
-        <%= resultTags.msg %>
-      </div>
-      <% } %>
-      <p class="bf-old tc3"><span id="openModal1">最近使ったタグ</span></p>
-      <div class="flex-container flex-center">
-        <input class="tc1 bg7 shadow" type="submit" value="登録">
-      </div>
-    </div>
-  </form>
-  </section>
 </div>
 
 <div id="modalArea1" class="modalArea">
