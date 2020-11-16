@@ -13,7 +13,8 @@
   }
 
   .bottom-nav {
-    overflow-y: scroll;
+    /*    overflow-y: scroll;*/
+    padding-right: 15px;
   }
 
   .bottom-nav-wide {
