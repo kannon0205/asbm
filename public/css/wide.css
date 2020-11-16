@@ -12,9 +12,15 @@
     padding-bottom: 3rem;
   }
 
+  .vh100 {
+    height: 100vh;
+  }
+
+  /*
   .fixed-btn {
     left: 20%;
   }
+*/
 
 }
 
