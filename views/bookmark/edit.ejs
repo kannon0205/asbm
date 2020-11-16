@@ -45,7 +45,7 @@
             </div>
             <% } %>
             <p class="bf-memo"><label for="bf-memo">メモ</label></p>
-            <textarea id="bf-memo" rows="5" name="memo" value="<%= memo %>"></textarea>
+            <textarea id="bf-memo" rows="5" name="memo" value="<%= user_bookmark.memo %>"></textarea>
             <% if(resultMemo) { %>
             <div class="bf-alert">
               <%= resultMemo.msg %>

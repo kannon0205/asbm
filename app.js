@@ -781,8 +781,6 @@ app.get('/mybookmark/edit/:bookmark_id', authMiddleware, (req, res) => {
 
         const publicString = user_bookmark.public + '';
 
-        console.log(user_bookmark.memo);
-
         res.render('bookmark/edit.ejs', {
           current_user: req.user,
           user_bookmark: user_bookmark,
