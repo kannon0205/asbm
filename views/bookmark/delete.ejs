@@ -21,34 +21,36 @@
 <!--/bottomNav-->
 
 <div class="wrapper bg5">
- <section>
-  <!--header-->
-  <div class="header tc1 shadow">
-    <h1>ブックマークを削除</h1>
-  </div>
-  <!--/header-->
+  <div class="wide">
+    <section>
+      <!--header-->
+      <div class="header tc1 shadow">
+        <h1>ブックマークを削除</h1>
+      </div>
+      <!--/header-->
 
-  <div class="bookmark-container shadow bg1">
-    <div class="ogp">
-      <h2 class="title bold"><%= user_bookmark.title %></h2>
-      <p class="url tc3"><a href="<%= user_bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= user_bookmark.url %></a></p>
-      <p><%= user_bookmark.site_name %></p>
-    </div>
-    <p class="memo"><%= user_bookmark.memo %></p>
-    <p>
-      <% user_bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
-      #<a class="tc5" href=""><%= bookmarkTag.name -%></a>
-      <% }); %>
-    </p>
-    <div class="edit flex-container">
-      <p><a href="<%='/mybookmark/delete/' + user_bookmark.id %>"><i class="fas fa-trash"></i></a></p>
-      <p><a href="<%='/mybookmark/edit/' + user_bookmark.id %>"><i class="fas fa-edit"></i></a></p>
-    </div>
+      <div class="bookmark-container shadow bg1">
+        <div class="ogp">
+          <h2 class="title bold"><%= user_bookmark.title %></h2>
+          <p class="url tc3"><a href="<%= user_bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= user_bookmark.url %></a></p>
+          <p><%= user_bookmark.site_name %></p>
+        </div>
+        <p class="memo"><%= user_bookmark.memo %></p>
+        <p>
+          <% user_bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
+          #<a class="tc5" href=""><%= bookmarkTag.name -%></a>
+          <% }); %>
+        </p>
+        <div class="edit flex-container">
+          <p><a href="<%='/mybookmark/delete/' + user_bookmark.id %>"><i class="fas fa-trash"></i></a></p>
+          <p><a href="<%='/mybookmark/edit/' + user_bookmark.id %>"><i class="fas fa-edit"></i></a></p>
+        </div>
+      </div>
+      <form action="<%= '/mybookmark/delete/' + user_bookmark.id %>" method="post">
+        <p class="flex-container flex-center bf-delete"><input type="submit" class="bg7 tc1 shadow" value="このブックマークを削除する"></p>
+      </form>
+    </section>
   </div>
-  <form action="<%= '/mybookmark/delete/' + user_bookmark.id %>" method="post">
-    <p class="flex-container flex-center bf-delete"><input type="submit" class="bg7 tc1 shadow" value="このブックマークを削除する"></p>
-  </form>
-  </section>
 </div>
 
 <!--common-->

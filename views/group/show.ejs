@@ -21,50 +21,52 @@
 <!--/bottomNav-->
 
 <div class="wrapper">
+  <div class="wide">
 
-<section>
-  <!--header-->
-  <div class="header tc1 shadow">
-    <h1>グループ詳細</h1>
-  </div>
-  <!--/header-->
+    <section>
+      <!--header-->
+      <div class="header tc1 shadow">
+        <h1>グループ詳細</h1>
+      </div>
+      <!--/header-->
 
-  <div class="group-top-container flex-container flex-center tc1 bg2">
-    <p><i class="fas fa-users"></i></p>
-    <div>
-      <h2 class="tc5"><%= group.name %></h2>
-      <p>メンバー(<%= groupCount %>)</p>
-    </div>
-  </div>
+      <div class="group-top-container flex-container flex-center tc1 bg2">
+        <p><i class="fas fa-users"></i></p>
+        <div>
+          <h2 class="tc5"><%= group.name %></h2>
+          <p>メンバー(<%= groupCount %>)</p>
+        </div>
+      </div>
 
-  <div class="group-main-container">
-    <div class="group-main-title">
-      <h2 class="bold">概要</h2>
-    </div>
-    <div class="group-main-owner">
-      <p>オーナー: <span class="tc3"><%= group.User.name %></span></p>
-    </div>
-    <div class="group-main-text">
-      <%= group.memo %>
-    </div>
-    <div class="group-main-btn flex-container flex-center">
-      <% if(group.owner === current_user.id) { %>
-      <form action="<%= '/group/dismiss/' + group.id %>" method="post">
-        <p><input class="tc1 bg2" type="submit" value="グループを解体"></p>
-      </form>
-      <% } else if(addGroup) { %>
-      <form action="<%= '/group/leave/' + group.id %>" method="post">
-        <p><input class="tc1 bg2" type="submit" value="グループを脱退"></p>
-      </form>
-      <% } else { %>
-      <form action="<%= '/group/join/' + group.id %>" method="post">
-        <p><input class="tc1 bg7" type="submit" value="グループに参加"></p>
-      </form>
-      <% } %>
-    </div>
+      <div class="group-main-container">
+        <div class="group-main-title">
+          <h2 class="bold">概要</h2>
+        </div>
+        <div class="group-main-owner">
+          <p>オーナー: <span class="tc3"><%= group.User.name %></span></p>
+        </div>
+        <div class="group-main-text">
+          <%= group.memo %>
+        </div>
+        <div class="group-main-btn flex-container flex-center">
+          <% if(group.owner === current_user.id) { %>
+          <form action="<%= '/group/dismiss/' + group.id %>" method="post">
+            <p><input class="tc1 bg2" type="submit" value="グループを解体"></p>
+          </form>
+          <% } else if(addGroup) { %>
+          <form action="<%= '/group/leave/' + group.id %>" method="post">
+            <p><input class="tc1 bg2" type="submit" value="グループを脱退"></p>
+          </form>
+          <% } else { %>
+          <form action="<%= '/group/join/' + group.id %>" method="post">
+            <p><input class="tc1 bg7" type="submit" value="グループに参加"></p>
+          </form>
+          <% } %>
+        </div>
+      </div>
+    </section>
+
   </div>
-  </section>
-  
 </div>
 
 <!--common-->

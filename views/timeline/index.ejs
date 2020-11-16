@@ -28,25 +28,29 @@
 
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
-        <section>
+        <div class="wide">
 
-          <!--header-->
-          <div class="header tc1 shadow">
-            <h2>タイムライン1</h2>
-          </div>
-          <!--/header-->
-          <div>
+          <section>
 
-            <div class="bookmark-container shadow bg1">
-              <h2 class="bold">タイムラインがありません</h2>
-              <p class="timeline-create tc3">
-                <a href="<%= '/timeline/create/' + 1 %>">新規作成</a>
-              </p>
+            <!--header-->
+            <div class="header tc1 shadow">
+              <h2>タイムライン1</h2>
+            </div>
+            <!--/header-->
+            <div>
+
+              <div class="bookmark-container shadow bg1">
+                <h2 class="bold">タイムラインがありません</h2>
+                <p class="timeline-create tc3">
+                  <a href="<%= '/timeline/create/' + 1 %>">新規作成</a>
+                </p>
+              </div>
+
             </div>
 
-          </div>
+          </section>
 
-        </section>
+        </div>
       </div>
     </div>
 
@@ -56,34 +60,37 @@
 
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
+        <div class="wide">
 
-        <!--header-->
-        <div class="header tc1 shadow">
-          <h2><%= timeline[i].name %></h2>
-        </div>
-        <!--/header-->
-        <div>
-          <% timeline[i].bookmark.forEach((bookmark) => { %>
+          <!--header-->
+          <div class="header tc1 shadow">
+            <h2><%= timeline[i].name %></h2>
+          </div>
+          <!--/header-->
+          <div>
+            <% timeline[i].bookmark.forEach((bookmark) => { %>
 
-          <section class="bookmark-container shadow bg1">
-            <div class="ogp">
-              <h2 class="title bold"><%= bookmark.title %></h2>
-              <p class="url tc3"><a href="<%= bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= bookmark.url %></a></p>
-              <p><%= bookmark.site_name %></p>
-            </div>
-            <p class="memo"><%= bookmark.memo %></p>
-            <p>
-              <% bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
-              #<a class="tc5" href="<%= '/tag/' + bookmarkTag.id %>"><%= bookmarkTag.name -%></a>
-              <% }); %>
-            </p>
-            <div class="bookmark-user flex-container">
-              <p><i class="fas fa-user"></i></p>
-              <p class="tc3"><a href="<%= '/user/' + bookmark.User.id %>"><%= bookmark.User.name %></a></p>
-            </div>
-          </section>
+            <section class="bookmark-container shadow bg1">
+              <div class="ogp">
+                <h2 class="title bold"><%= bookmark.title %></h2>
+                <p class="url tc3"><a href="<%= bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= bookmark.url %></a></p>
+                <p><%= bookmark.site_name %></p>
+              </div>
+              <p class="memo"><%= bookmark.memo %></p>
+              <p>
+                <% bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
+                #<a class="tc5" href="<%= '/tag/' + bookmarkTag.id %>"><%= bookmarkTag.name -%></a>
+                <% }); %>
+              </p>
+              <div class="bookmark-user flex-container">
+                <p><i class="fas fa-user"></i></p>
+                <p class="tc3"><a href="<%= '/user/' + bookmark.User.id %>"><%= bookmark.User.name %></a></p>
+              </div>
+            </section>
 
-          <% }); %>
+            <% }); %>
+
+          </div>
 
         </div>
       </div>
@@ -95,19 +102,23 @@
 
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
-        <!--header-->
-        <div class="header tc1 shadow">
-          <h2><%= 'タイムライン' + next %></h2>
-        </div>
-        <!--/header-->
-        <div>
+        <div class="wide">
 
-          <section class="bookmark-container shadow bg1">
-            <h2 class="bold">新規タイムライン</h2>
-            <p class="timeline-create tc3">
-              <a href="<%= '/timeline/create/' + next %>">追加</a>
-            </p>
-          </section>
+          <!--header-->
+          <div class="header tc1 shadow">
+            <h2><%= 'タイムライン' + next %></h2>
+          </div>
+          <!--/header-->
+          <div>
+
+            <section class="bookmark-container shadow bg1">
+              <h2 class="bold">新規タイムライン</h2>
+              <p class="timeline-create tc3">
+                <a href="<%= '/timeline/create/' + next %>">追加</a>
+              </p>
+            </section>
+
+          </div>
 
         </div>
       </div>

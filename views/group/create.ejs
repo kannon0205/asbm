@@ -21,45 +21,48 @@
 <!--/bottomNav-->
 
 <div class="wrapper bg6">
+  <div class="wide">
 
-<section>
-  <!--header-->
-  <div class="header tc1 shadow">
-    <h1>新規グループを作成</h1>
+    <section>
+      <!--header-->
+      <div class="header tc1 shadow">
+        <h1>新規グループを作成</h1>
+      </div>
+      <!--/header-->
+      <form action="/group/create" method="post">
+        <div class="group-container  gf bg1 shadow">
+          <h1 class="bold">グループの情報</h1>
+          <div>
+            <p><label for="group-name">グループ名</label></p>
+            <input id="group-name" type="text" name="name" value="<%= name %>">
+          </div>
+          <% if(resultName) { %>
+          <div class="bf-alert">
+            <%= resultName.msg %>
+          </div>
+          <% } %>
+          <% if(correctMessage) { %>
+          <div class="bf-alert">
+            <%= correctMessage %>
+          </div>
+          <% } %>
+          <div>
+            <p><label for="group-message">グループ概要</label></p>
+            <textarea id="group-memo" rows="5" name="memo" value="<%= memo %>"></textarea>
+          </div>
+          <% if(resultMemo) { %>
+          <div class="bf-alert">
+            <%= resultMemo.msg %>
+          </div>
+          <% } %>
+          <div class="flex-container flex-center">
+            <input class="tc1 bg7 shadow" type="submit" value="登録">
+          </div>
+        </div>
+      </form>
+    </section>
+
   </div>
-  <!--/header-->
-  <form action="/group/create" method="post">
-    <div class="group-container  gf bg1 shadow">
-      <h1 class="bold">グループの情報</h1>
-      <div>
-        <p><label for="group-name">グループ名</label></p>
-        <input id="group-name" type="text" name="name" value="<%= name %>">
-      </div>
-      <% if(resultName) { %>
-      <div class="bf-alert">
-        <%= resultName.msg %>
-      </div>
-      <% } %>
-      <% if(correctMessage) { %>
-      <div class="bf-alert">
-        <%= correctMessage %>
-      </div>
-      <% } %>
-      <div>
-        <p><label for="group-message">グループ概要</label></p>
-        <textarea id="group-memo" rows="5" name="memo" value="<%= memo %>"></textarea>
-      </div>
-      <% if(resultMemo) { %>
-      <div class="bf-alert">
-        <%= resultMemo.msg %>
-      </div>
-      <% } %>
-      <div class="flex-container flex-center">
-        <input class="tc1 bg7 shadow" type="submit" value="登録">
-      </div>
-    </div>
-  </form>
-</section>
 </div>
 
 <!--common-->

@@ -21,55 +21,57 @@
 <!--/bottomNav-->
 
 <div class="wrapper bg5">
+  <div class="wide">
 
-<section>
-  <!--header-->
-  <div class="header tc1 shadow">
-    <h1>タイムラインを編集</h1>
+    <section>
+      <!--header-->
+      <div class="header tc1 shadow">
+        <h1>タイムラインを編集</h1>
+      </div>
+      <!--/header-->
+      <form action="<%= '/timeline/edit/' + params %>" method="post">
+        <div class="tf-container bg1 shadow">
+          <h2 class="bold">タイムライン情報</h2>
+          <div class="tf-option">
+            <p><label for="name">タイムライン名</label></p>
+            <div class="tf-box">
+              <p><input name="name" id="name" type="text"></p>
+            </div>
+          </div>
+          <% if(resultName) { %>
+          <div class="bf-alert">
+            <%= resultName.msg %>
+          </div>
+          <% } %>
+          <div class="tf-option">
+            <p>グループから選ぶ</p>
+            <div class="flex-container tf-box">
+              <% groups.forEach(group => {%>
+              <p class="tf-checkbox bg3 tc1 shadow"><label><input type="checkbox" name="groups" value="<%= group.id %>"><%= group.name %></label></p>
+              <% }); %>
+            </div>
+          </div>
+          <div class="tf-option">
+            <p>フォローユーザーから選ぶ</p>
+            <div class="flex-container tf-box">
+              <% follows.forEach(follow => {%>
+              <p class="tf-checkbox bg3 tc1 shadow"><label><input type="checkbox" name="follows" value="<%= follow.User.id %>"><%= follow.User.name %></label></p>
+              <% }); %>
+            </div>
+          </div>
+          <div class="tf-option">
+            <p>タグから選ぶ</p>
+            <div class="tf-box">
+              <p><input name="tags" id="tags" type="text"></p>
+              <p class="tf-tag tc3"><span id="openModal1">最近使ったタグ</span></p>
+            </div>
+          </div>
+          <p class="flex-container flex-center"><input class="bg7 tc1" type="submit" value="登録"></p>
+        </div>
+      </form>
+    </section>
+
   </div>
-  <!--/header-->
-  <form action="<%= '/timeline/edit/' + params %>" method="post">
-    <div class="tf-container bg1 shadow">
-      <h2 class="bold">タイムライン情報</h2>
-      <div class="tf-option">
-        <p><label for="name">タイムライン名</label></p>
-        <div class="tf-box">
-          <p><input name="name" id="name" type="text"></p>
-        </div>
-      </div>
-      <% if(resultName) { %>
-      <div class="bf-alert">
-        <%= resultName.msg %>
-      </div>
-      <% } %>
-      <div class="tf-option">
-        <p>グループから選ぶ</p>
-        <div class="flex-container tf-box">
-          <% groups.forEach(group => {%>
-          <p class="tf-checkbox bg3 tc1 shadow"><label><input type="checkbox" name="groups" value="<%= group.id %>"><%= group.name %></label></p>
-          <% }); %>
-        </div>
-      </div>
-      <div class="tf-option">
-        <p>フォローユーザーから選ぶ</p>
-        <div class="flex-container tf-box">
-          <% follows.forEach(follow => {%>
-          <p class="tf-checkbox bg3 tc1 shadow"><label><input type="checkbox" name="follows" value="<%= follow.User.id %>"><%= follow.User.name %></label></p>
-          <% }); %>
-        </div>
-      </div>
-      <div class="tf-option">
-        <p>タグから選ぶ</p>
-        <div class="tf-box">
-          <p><input name="tags" id="tags" type="text"></p>
-          <p class="tf-tag tc3"><span id="openModal1">最近使ったタグ</span></p>
-        </div>
-      </div>
-      <p class="flex-container flex-center"><input class="bg7 tc1" type="submit" value="登録"></p>
-    </div>
-  </form>
-  </section>
-  
 </div>
 
 <div id="modalArea1" class="modalArea">

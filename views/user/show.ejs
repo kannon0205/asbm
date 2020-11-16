@@ -21,92 +21,94 @@
 <!--/bottomNav-->
 
 <div class="wrapper">
+  <div class="wide">
 
-  <section>
-    <!--header-->
-    <div class="header tc1 shadow">
-      <h1>ユーザーページ</h1>
-    </div>
-    <!--/header-->
+    <section>
+      <!--header-->
+      <div class="header tc1 shadow">
+        <h1>ユーザーページ</h1>
+      </div>
+      <!--/header-->
 
-    <div id="modalArea1" class="modalArea">
-      <div id="modalBg1" class="modalBg"></div>
-      <div class="modalWrapper">
+      <div id="modalArea1" class="modalArea">
+        <div id="modalBg1" class="modalBg"></div>
+        <div class="modalWrapper">
 
-        <section class="modal-container bg1">
-          <div class="modal-container user-list">
-            <ul>
-              <% followLists.forEach(followList => { %>
-              <li class="flex-container flex-between">
-                <p class="tc3 user-list-name"><a href="<%= '/user/' + followList.User.id %>"><%= followList.User.name %></a></p>
-              </li>
-              <% }); %>
-            </ul>
+          <section class="modal-container bg1">
+            <div class="modal-container user-list">
+              <ul>
+                <% followLists.forEach(followList => { %>
+                <li class="flex-container flex-between">
+                  <p class="tc3 user-list-name"><a href="<%= '/user/' + followList.User.id %>"><%= followList.User.name %></a></p>
+                </li>
+                <% }); %>
+              </ul>
+            </div>
+          </section>
+          <div id="closeModal1" class="closeModal">
+            ×
           </div>
-        </section>
-        <div id="closeModal1" class="closeModal">
-          ×
         </div>
       </div>
-    </div>
 
-    <div id="modalArea2" class="modalArea">
-      <div id="modalBg2" class="modalBg"></div>
-      <div class="modalWrapper">
+      <div id="modalArea2" class="modalArea">
+        <div id="modalBg2" class="modalBg"></div>
+        <div class="modalWrapper">
 
-        <section class="modal-container bg1">
-          <div class="modal-container user-list">
-            <ul>
-              <% groupLists.forEach(groupList => { %>
-              <li class="flex-container flex-between">
-                <p class="tc3 user-list-name bold"><a href="<%= '/group/' + groupList.id %>"><%= groupList.name %></a></p>
-                <p>オーナー:<a href="<%= '/user/' + groupList.User.id %>" class="tc5"><%= groupList.User.name %></a></p>
-              </li>
-              <% }); %>
-            </ul>
+          <section class="modal-container bg1">
+            <div class="modal-container user-list">
+              <ul>
+                <% groupLists.forEach(groupList => { %>
+                <li class="flex-container flex-between">
+                  <p class="tc3 user-list-name bold"><a href="<%= '/group/' + groupList.id %>"><%= groupList.name %></a></p>
+                  <p>オーナー:<a href="<%= '/user/' + groupList.User.id %>" class="tc5"><%= groupList.User.name %></a></p>
+                </li>
+                <% }); %>
+              </ul>
+            </div>
+          </section>
+          <div id="closeModal2" class="closeModal">
+            ×
           </div>
-        </section>
-        <div id="closeModal2" class="closeModal">
-          ×
         </div>
       </div>
-    </div>
 
-    <section class="user-container flex-container flex-colmn flex-center tc1 bg2">
-      <div class="flex-container">
-        <p><i class="fas fa-user"></i></p>
-        <div class="user-name flex-container flex-colmn flex-center">
-          <h2 class="tc5"><%= other_user.name %></h2>
-          <p>ブックマーク(<%= bookmarkCount %>)</p>
+      <section class="user-container flex-container flex-colmn flex-center tc1 bg2">
+        <div class="flex-container">
+          <p><i class="fas fa-user"></i></p>
+          <div class="user-name flex-container flex-colmn flex-center">
+            <h2 class="tc5"><%= other_user.name %></h2>
+            <p>ブックマーク(<%= bookmarkCount %>)</p>
+          </div>
         </div>
-      </div>
-      <ul class="flex-container">
-        <li>
-          <p><a id="openModal1" class="bg3"><i class="fas fa-user-plus"></i>フォロー(<%= followCount %>)</a></p>
-        </li>
-        <li>
-          <p><a id="openModal2" class="bg3"><i class="fas fa-users"></i>グループ(<%= groupCount %>)</a></p>
-        </li>
-      </ul>
+        <ul class="flex-container">
+          <li>
+            <p><a id="openModal1" class="bg3"><i class="fas fa-user-plus"></i>フォロー(<%= followCount %>)</a></p>
+          </li>
+          <li>
+            <p><a id="openModal2" class="bg3"><i class="fas fa-users"></i>グループ(<%= groupCount %>)</a></p>
+          </li>
+        </ul>
+      </section>
+
+
+      <nav class="user-menu">
+        <ul>
+          <li><a href="<%= '/user/bookmark/' + other_user.id %>">公開ブックマーク</a></li>
+          <% if(!followCheck) { %>
+          <form action="<%= '/follow/add/' + other_user.id %>" method="post">
+            <li><input type="submit" value="このユーザーをフォロー"></li>
+          </form>
+          <% } else { %>
+          <form action="<%= '/follow/remove/' + other_user.id %>" method="post">
+            <li><input type="submit" value="このユーザーのフォローを解除"></li>
+          </form>
+          <% } %>
+        </ul>
+      </nav>
     </section>
 
-
-    <nav class="user-menu">
-      <ul>
-        <li><a href="<%= '/user/bookmark/' + other_user.id %>">公開ブックマーク</a></li>
-        <% if(!followCheck) { %>
-        <form action="<%= '/follow/add/' + other_user.id %>" method="post">
-          <li><input type="submit" value="このユーザーをフォロー"></li>
-        </form>
-        <% } else { %>
-        <form action="<%= '/follow/remove/' + other_user.id %>" method="post">
-          <li><input type="submit" value="このユーザーのフォローを解除"></li>
-        </form>
-        <% } %>
-      </ul>
-    </nav>
-  </section>
-
+  </div>
 </div>
 
 <!--common-->

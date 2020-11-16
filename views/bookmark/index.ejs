@@ -21,36 +21,39 @@
 <!--/bottomNav-->
 
 <div class="bookmark-wrapper bg5">
-  <section>
-  <!--header-->
-  <div class="header tc1 shadow">
-    <h1>ブックマーク一覧</h1>
-  </div>
-  <!--/header-->
-  
-    <% bookmarks.forEach((bookmark) => { %>
+  <div class="wide">
 
-    <section class="bookmark-container shadow bg1">
-      <div class="ogp">
-        <h2 class="title bold"><%= bookmark.title %></h2>
-        <p class="url tc3"><a href="<%= bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= bookmark.url %></a></p>
-        <p><%= bookmark.site_name %></p>
+    <section>
+      <!--header-->
+      <div class="header tc1 shadow">
+        <h1>ブックマーク一覧</h1>
       </div>
-      <p class="memo"><%= bookmark.memo %></p>
-      <p>
-        <% bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
-        #<a class="tc5" href="<%= '/tag/' + bookmarkTag.id %>"><%= bookmarkTag.name -%></a>
-        <% }); %>
-      </p>
-      <div class="bookmark-user flex-container">
-        <p><i class="fas fa-user"></i></p>
-        <p class="tc3"><a href="<%= '/user/' + bookmark.User.id %>"><%= bookmark.User.name %></a></p>
-      </div>
+      <!--/header-->
+
+      <% bookmarks.forEach((bookmark) => { %>
+
+      <section class="bookmark-container shadow bg1">
+        <div class="ogp">
+          <h2 class="title bold"><%= bookmark.title %></h2>
+          <p class="url tc3"><a href="<%= bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= bookmark.url %></a></p>
+          <p><%= bookmark.site_name %></p>
+        </div>
+        <p class="memo"><%= bookmark.memo %></p>
+        <p>
+          <% bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
+          #<a class="tc5" href="<%= '/tag/' + bookmarkTag.id %>"><%= bookmarkTag.name -%></a>
+          <% }); %>
+        </p>
+        <div class="bookmark-user flex-container">
+          <p><i class="fas fa-user"></i></p>
+          <p class="tc3"><a href="<%= '/user/' + bookmark.User.id %>"><%= bookmark.User.name %></a></p>
+        </div>
+      </section>
+
+      <% }); %>
     </section>
 
-    <% }); %>
-  </section>
-
+  </div>
 </div>
 
 <!--common-->
