@@ -44,7 +44,7 @@
               <%= correctMessage %>
             </div>
             <% } %>
-            <p class="bf-memo"><label for="bf-memo">メモ</label></p>
+            <p class="bf-memo"><label for="bf-memo">メモ</label><%= user_bookmark.memo %></p>
             <textarea id="bf-memo" rows="5" name="memo" value="<%= user_bookmark.memo %>"></textarea>
             <% if(resultMemo) { %>
             <div class="bf-alert">

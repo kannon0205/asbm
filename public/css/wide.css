@@ -8,12 +8,8 @@
     margin: 0 auto;
   }
 
-  .wide {
-    padding-bottom: 3rem;
-  }
-
   .vh100 {
-    height: 100vh;
+    height: calc(100vh - 3rem);
   }
 
   /*
