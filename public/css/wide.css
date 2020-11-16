@@ -12,10 +12,13 @@
     height: calc(100vh - 3rem);
   }
 
+  .bottom-nav {
+    overflow-y: scroll;
+  }
+
   .bottom-nav-wide {
     width: 600px;
     margin: 0 auto;
-    overflow-y: scroll;
   }
 
   /*
