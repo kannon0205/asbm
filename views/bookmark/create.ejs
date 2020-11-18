@@ -97,6 +97,23 @@
   </div>
 </div>
 
+<script>
+  (function() {
+    const modalArea1 = document.getElementById('modalArea1');
+    const openModal1 = document.getElementById('openModal1');
+    const closeModal1 = document.getElementById('closeModal1');
+    const modalBg1 = document.getElementById('modalBg1');
+    const toggle1 = [openModal1, closeModal1, modalBg1];
+
+    for (let i = 0, len1 = toggle1.length; i < len1; i++) {
+      toggle1[i].addEventListener('click', function() {
+        modalArea1.classList.toggle('is-show');
+      }, false);
+    }
+  }());
+
+</script>
+
 <!--common-->
 <%- include('../partials/footer'); %>
 <!--/common-->
