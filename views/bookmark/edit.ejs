@@ -63,7 +63,7 @@
             <%= resultTags.msg %>
           </div>
           <% } %>
-          <p class="bf-old tc3"><span id="openModal1">最近使ったタグ</span></p>
+          <p class="bf-old tc3"><span id="openModal1" class="cursor">最近使ったタグ</span></p>
           <div class="flex-container flex-center">
             <input class="tc1 bg7 shadow" type="submit" value="登録">
           </div>
@@ -82,7 +82,7 @@
         <ul class="bf-tags flex-container">
           <%  for (let i = 0; i < user_tags.length && i < 20; i++) { %>
           <li>
-            <p class="bf-tag bg3 tc1" onclick="document.getElementById('tags').value += '<%= user_tags[i].name %> ';"><%= user_tags[i].name %></p>
+            <p class="bf-tag bg3 tc1 cursor" onclick="document.getElementById('tags').value += '<%= user_tags[i].name %> ';"><%= user_tags[i].name %></p>
           </li>
           <% } %>
         </ul>
