@@ -81,7 +81,7 @@
       <nav class="modal-container">
         <% if(user_tags){ %>
         <ul class="bf-tags flex-container">
-          <%  for (let i = 0; i < user_tags.length && i < 20; i++) { %>
+          <%  for (let i = 0; i < user_tags.length && i < 30; i++) { %>
           <li>
             <p class="bf-tag bg3 tc1 cursor" onclick="document.getElementById('tags').value += '<%= user_tags[i].name %> ';"><%= user_tags[i].name %></p>
           </li>
