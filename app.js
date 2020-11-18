@@ -164,9 +164,9 @@ const registrationValidationRules = [
   check('name')
   .not().isEmpty().withMessage('この項目は必須入力です。')
   .isLength({
-    min: 4,
+    min: 2,
     max: 20
-  }).withMessage('4文字から20文字にしてください。')
+  }).withMessage('2文字から20文字にしてください。')
   .trim()
   .escape(),
   check('email')
