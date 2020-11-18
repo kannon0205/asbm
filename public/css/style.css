@@ -541,8 +541,7 @@ textarea {
 }
 
 .group-main-btn {
-  padding: 1rem 2rem 0;
-  margin-bottom: 3rem;
+  padding: 1rem 2rem 2rem;
 }
 
 .group-main-container input[type="submit"] {
