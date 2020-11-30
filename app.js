@@ -5,9 +5,6 @@ const app = express();
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-//const config = require('./config/config.js');
-//もしかしていらないかも
-
 const PORT = process.env.PORT || 5000;
 
 //本番用
@@ -53,8 +50,6 @@ app.use(express.static('public'));
 //暗号化につかうキー
 const APP_KEY = process.env.APP_KEY;
 
-
-//ミドルウェア
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
@@ -2338,7 +2333,7 @@ app.get('/', authMiddleware, (req, res) => {
 
 //error handler
 app.use(function (err, req, res, next) {
-  console.log(err.stack); // e.g., Not valid name
+  console.log(err.stack);
   return res.status(500).send('Internal Server Occured');
 });
 
