@@ -604,7 +604,7 @@ app.post('/mybookmark/edit/:bookmark_id', authMiddleware, createUserValidationRu
           const resultMemo = errors_array.find((v) => v.param === 'memo');
           const resultTags = errors_array.find((v) => v.param === 'tags');
 
-          expressResponse.render('bookmark/create.ejs', {
+          expressResponse.render('bookmark/edit.ejs', {
             current_user: req.user,
             user_bookmark: user_bookmark,
             url: req.body.url,
