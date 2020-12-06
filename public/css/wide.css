@@ -4,6 +4,8 @@
 
   body {
     background-color: #E9E9E9;
+    display: flex;
+    justify-content: center;
   }
 
   .wrapper,
@@ -25,8 +27,6 @@
     min-width: 600px;
     justify-content: flex-start;
   }
-
-  .bookmark-wrapper {}
 
   .wide-none {
     display: none;
