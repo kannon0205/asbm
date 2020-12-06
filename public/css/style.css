@@ -74,15 +74,15 @@ textarea {
 
 .wrapper {
   width: 100%;
-  height: 100vh;
-  overflow-y: scroll;
+  min-height: 100vh;
+  /*  overflow-y: scroll;*/
   padding-bottom: 3rem;
 }
 
 .bookmark-wrapper {
   width: 100%;
-  height: 100vh;
-  overflow-y: scroll;
+  min-height: 100vh;
+  /*  overflow-y: scroll;*/
   padding-bottom: 5rem;
 }
 
