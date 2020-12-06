@@ -7,9 +7,22 @@
   }
 
   .wide-wrapper {
-    width: 760px;
-    margin: 0 auto;
-    padding-left: 160px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .wide-left {
+    min-width: 160px;
+    justify-content: flex-end;
+  }
+
+  .wide-right {
+    min-width: 600px;
+    justify-content: flex-start;
+  }
+
+  .bookmark-wrapper {
+    width: 600px;
   }
 
   .wide-none {
