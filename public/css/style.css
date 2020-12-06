@@ -175,6 +175,7 @@ textarea {
   left: calc(50% - 300px);
   z-index: 999;
   color: #fff;
+  background-color: red;
 }
 
 /*/nav*/
