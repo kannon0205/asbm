@@ -8,10 +8,6 @@
     margin: 0 auto;
   }
 
-  .vh100 {
-    height: calc(100vh - 3rem);
-  }
-
   .bottom-nav {
     overflow-y: scroll;
   }
