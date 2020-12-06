@@ -21,7 +21,7 @@
 <!--/bottomNav-->
 
 <div class="fixed-btn flex-container flex-center bg7" id="openModal1">
-  <p><i class="fas fa-bars"></i></p>
+  <p><a href="/bookmark/create"><i class="fas fa-plus"></i></a></p>
 </div>
 
 <div class="bookmark-wrapper bg5">
@@ -58,42 +58,6 @@
 
   </div>
 </div>
-
-<div id="modalArea1" class="modalArea">
-  <div id="modalBg1" class="modalBg"></div>
-  <div class="modalWrapper">
-
-    <section class="modal-container bg1">
-      <nav class="modal-container bookmark-menu">
-        <ul>
-          <li><a href="/bookmark/create">ブックマーク登録</a></li>
-          <li><a href="">マイタグ</a></li>
-        </ul>
-      </nav>
-    </section>
-
-    <div id="closeModal1" class="closeModal">
-      ×
-    </div>
-  </div>
-</div>
-
-<script>
-  (function() {
-    const modalArea1 = document.getElementById('modalArea1');
-    const openModal1 = document.getElementById('openModal1');
-    const closeModal1 = document.getElementById('closeModal1');
-    const modalBg1 = document.getElementById('modalBg1');
-    const toggle1 = [openModal1, closeModal1, modalBg1];
-
-    for (let i = 0, len1 = toggle1.length; i < len1; i++) {
-      toggle1[i].addEventListener('click', function() {
-        modalArea1.classList.toggle('is-show');
-      }, false);
-    }
-  }());
-
-</script>
 
 <!--common-->
 <%- include('../partials/footer'); %>
