@@ -21,6 +21,10 @@
     margin: 0 auto;
   }
 
+  .wide-none {
+    display: none;
+  }
+
   /*
   .fixed-btn {
     left: 20%;
