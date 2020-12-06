@@ -8,7 +8,8 @@
   nav1:'active',
   nav2:'inactive',
   nav3:'inactive',
-  nav4:'inactive'
+  nav4:'inactive',
+  nav5:'inactive'
 };
 %>
 
@@ -17,8 +18,12 @@
 <!--/common-->
 
 <!--bottomNav-->
-<%- include('../partials/bottomNav', {status: status}); %>
+<%- include('../partials/bottom-nav', {status: status}); %>
 <!--/bottomNav-->
+
+<!--sideNav-->
+<%- include('../partials/side-nav', {status: status}); %>
+<!--/sideNav-->
 
 <div class="swiper-container swiper1  bg5">
   <div class="swiper-wrapper">

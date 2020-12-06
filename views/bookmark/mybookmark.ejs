@@ -8,7 +8,8 @@
   nav1:'inactive',
   nav2:'inactive',
   nav3:'inactive',
-  nav4:'active'
+  nav4:'active',
+  nav5:'inactive'
 };
 %>
 
@@ -17,8 +18,12 @@
 <!--/common-->
 
 <!--bottomNav-->
-<%- include('../partials/bottomNav', {status: status}); %>
+<%- include('../partials/bottom-nav', {status: status}); %>
 <!--/bottomNav-->
+
+<!--sideNav-->
+<%- include('../partials/side-nav', {status: status}); %>
+<!--/sideNav-->
 
 <a href="/bookmark/create">
   <div class="fixed-btn flex-container flex-center bg7 wide-none" id="openModal1">

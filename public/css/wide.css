@@ -11,20 +11,13 @@
     overflow-y: scroll;
   }
 
-  .bottom-nav-wide {
-    width: 600px;
-    margin: 0 auto;
-  }
-
   .wide-none {
     display: none;
   }
 
-  /*
-  .fixed-btn {
-    left: 20%;
+  .side-nav {
+    display: block;
   }
-*/
 
 }
 
