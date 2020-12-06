@@ -21,10 +21,6 @@
 <%- include('../partials/bottom-nav', {status: status}); %>
 <!--/bottomNav-->
 
-<!--sideNav-->
-<%- include('../partials/side-nav', {status: status}); %>
-<!--/sideNav-->
-
 <a href="/bookmark/create">
   <div class="fixed-btn flex-container flex-center bg7 wide-none" id="openModal1">
     <p><i class="fas fa-plus"></i></p>
@@ -33,6 +29,10 @@
 
 <div class="bookmark-wrapper bg5">
   <div class="wide-wrapper">
+
+    <!--sideNav-->
+    <%- include('../partials/side-nav', {status: status}); %>
+    <!--/sideNav-->
 
     <section>
       <!--header-->
