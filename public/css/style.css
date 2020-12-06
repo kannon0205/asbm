@@ -172,7 +172,7 @@ textarea {
   display: none;
   width: 160px;
   position: fixed;
-  left: calc(50% - 387px);
+  left: calc(50vw - 380px);
   z-index: 999;
   color: #fff;
   background-color: red;
