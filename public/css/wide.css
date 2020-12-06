@@ -6,6 +6,10 @@
     background-color: #E9E9E9;
   }
 
+  .bookmark-wrapper {
+    overflow-y: auto;
+  }
+
   .wide-wrapper {
     display: flex;
     justify-content: center;
