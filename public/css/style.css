@@ -171,9 +171,11 @@ textarea {
 .side-nav {
   display: none;
   width: 160px;
+  position: fixed;
+  left: calc(50% - 460px);
+  z-index: 999;
+  color: #fff;
 }
-
-.side-nav {}
 
 /*/nav*/
 

@@ -4,15 +4,12 @@
 
   body {
     background-color: #E9E9E9;
+    padding-left: 160px;
   }
 
   .wide-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-
-  .bookmark-wrapper {
     width: 600px;
+    margin: 0 auto;
   }
 
   .wide-none {
