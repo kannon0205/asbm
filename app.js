@@ -509,7 +509,7 @@ app.post('/bookmark/create', authMiddleware, createUserValidationRules, (req, ex
 
           }
 
-          expressResponse.redirect('/bookmark/mybookmark');
+          expressResponse.redirect('/bookmark/mybookmark.ejs');
 
         } else {
 
