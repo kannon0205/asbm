@@ -170,6 +170,10 @@ textarea {
 
 .side-nav {
   display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  width: 400px;
 }
 
 /*/nav*/
