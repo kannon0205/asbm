@@ -3,13 +3,16 @@
 @media screen and (min-width:600px) {
 
   body {
-    display: flex;
     background-color: #E9E9E9;
   }
 
-  .wide {
+  .wide-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bookmark-wrapper {
     width: 600px;
-    margin: 0 auto;
   }
 
   .wide-none {
