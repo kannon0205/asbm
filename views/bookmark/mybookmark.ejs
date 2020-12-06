@@ -14,8 +14,12 @@
 %>
 
 <!--common-->
-<%- include('../partials/header', {meta: localmeta}, {status: status}); %>
+<%- include('../partials/header', {meta: localmeta}); %>
 <!--/common-->
+
+<!--sideNav-->
+<%- include('../partials/side-nav', {status: status}); %>
+<!--/sideNav-->
 
 <!--bottomNav-->
 <%- include('../partials/bottom-nav', {status: status}); %>
