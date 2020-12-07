@@ -52,10 +52,13 @@
   .side-nav ul li a {
     display: block;
     padding: 1rem;
+    background-color: #fff;
+    transition: background-color 0.2s linear;
   }
 
   .side-nav ul li a:hover {
     background-color: rgba(77, 192, 178, 0.4);
+    transition: background-color 0.1s linear;
   }
 
   .active {
