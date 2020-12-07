@@ -24,7 +24,7 @@
   }
 
   .side-nav {
-    width: 160px;
+    min-width: 160px;
     position: fixed;
   }
 
