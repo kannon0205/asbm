@@ -37,6 +37,10 @@
     margin-bottom: 1rem;
   }
 
+  .side-nav ul li:last-child {
+    margin-bottom: 0;
+  }
+
   .wide-right {
     min-width: 600px;
     justify-content: flex-start;
