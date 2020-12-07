@@ -19,12 +19,12 @@
   }
 
   .wide-left {
-    /*    min-width: 160px;*/
+    min-width: 240px;
     justify-content: flex-end;
   }
 
   .side-nav {
-    /*    min-width: 160px;*/
+    min-width: 240px;
     position: fixed;
     font-size: 1.2rem;
     font-weight: bold;
