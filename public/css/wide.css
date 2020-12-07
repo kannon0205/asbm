@@ -49,6 +49,18 @@
     margin-right: 1rem;
   }
 
+  .side-nav ul li a {
+    display: block;
+  }
+
+  .side-nav ul li a:hover {
+    background-color: #4DC0B2;
+  }
+
+  .active {
+    color: #FFC042;
+  }
+
   .wide-right {
     min-width: 600px;
     justify-content: flex-start;

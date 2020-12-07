@@ -2,21 +2,21 @@
   <nav class="side-nav">
     <div>
       <ul>
-        <li><a class="<%= status.nav1 %>" href="/">
-            <p><i class="fas fa-home"></i>タイムライン</p>
-          </a></li>
-        <li><a class="<%= status.nav2 %>" href="<%= "/user/" + current_user.id %>">
-            <p><i class="fas fa-user"></i>マイページ</p>
-          </a></li>
-        <li><a class="<%= status.nav3 %>" href="#">
-            <p><i class="fas fa-search"></i>検索</p>
-          </a></li>
-        <li><a class="<%= status.nav4 %>" href="/mybookmark">
-            <p><i class="fas fa-star"></i>マイブックマーク</p>
-          </a></li>
-        <li><a class="<%= status.nav5 %>" href="/bookmark/create">
-            <p><i class="fas fa-plus"></i>ブックマーク登録</p>
-          </a></li>
+        <li>
+          <p><a class="<%= status.nav1 %>" href="/"><i class="fas fa-home"></i>タイムライン</a></p>
+        </li>
+        <li>
+          <p><a class="<%= status.nav2 %>" href="<%= "/user/" + current_user.id %>"><i class="fas fa-user"></i>マイページ</a></p>
+        </li>
+        <li>
+          <p><a class="<%= status.nav3 %>" href="#"><i class="fas fa-search"></i>検索</a></p>
+        </li>
+        <li>
+          <p><a class="<%= status.nav4 %>" href="/mybookmark"><i class="fas fa-star"></i>マイブックマーク</a></p>
+        </li>
+        <li>
+          <p><a class="<%= status.nav5 %>" href="/bookmark/create"><i class="fas fa-plus"></i>ブックマーク登録</a></p>
+        </li>
       </ul>
     </div>
   </nav>
