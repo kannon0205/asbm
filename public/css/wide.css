@@ -1,6 +1,6 @@
 /**/
 
-@media screen and (min-width:976px) {
+@media screen and (min-width:876px) {
 
   body {
     background-color: #E9E9E9;
@@ -19,13 +19,13 @@
   }
 
   .wide-left {
-    min-width: 360px;
+    min-width: 260px;
     justify-content: flex-end;
     margin-right: 1rem;
   }
 
   .side-nav {
-    min-width: 360px;
+    min-width: 260px;
     position: fixed;
     font-size: 1.2rem;
     font-weight: bold;
