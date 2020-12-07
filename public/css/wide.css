@@ -30,7 +30,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     margin-top: 2.5rem;
-    padding: 2rem;
+    padding: 1rem;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@
   }
 
   .side-nav ul li {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .side-nav ul li:last-child {
@@ -54,11 +54,13 @@
   }
 
   .side-nav ul li a:hover {
-    background-color: #4DC0B2;
+    background-color: rgba(77, 192, 178, 0.6);
   }
 
   .active {
     color: #FFC042;
+    background-color: transparent;
+    padding: 1rem;
   }
 
   .wide-right {
