@@ -72,16 +72,17 @@ textarea {
   cursor: pointer;
 }
 
-.wrapper,
-.bookmark-wrapper {
+.wrapper {
   width: 100%;
   min-height: 100vh;
   padding-bottom: 5rem;
 }
 
 .bookmark-wrapper {
+  width: 100%;
   height: 100vh;
   overflow-y: scroll;
+  padding-bottom: 5rem;
 }
 
 .header {
