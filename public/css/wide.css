@@ -7,8 +7,14 @@
   }
 
   .wrapper,
-  .bookmark-wrapper {
+  .bookmark-wrapper,
+  .top-wrapper {
     width: 600px;
+  }
+
+  .bookmark-wrapper {
+    height: 100vh;
+    overflow-y: scroll;
   }
 
   .wide-wrapper {
@@ -32,6 +38,10 @@
 
   .side-nav {
     display: block;
+  }
+
+  .swiper-wrapper {
+    width: 600px;
   }
 
 }

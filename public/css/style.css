@@ -72,12 +72,7 @@ textarea {
   cursor: pointer;
 }
 
-.wrapper {
-  width: 100%;
-  min-height: 100vh;
-  padding-bottom: 3rem;
-}
-
+.wrapper,
 .bookmark-wrapper {
   width: 100%;
   min-height: 100vh;
@@ -180,7 +175,7 @@ textarea {
 
 .top-wrapper {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #37AB9D;
   padding: 1rem;
 }
