@@ -16,6 +16,9 @@
   .wide-wrapper {
     display: flex;
     justify-content: center;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    background-color: #fff;
   }
 
   .wide-left {
