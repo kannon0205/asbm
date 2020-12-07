@@ -26,6 +26,12 @@
   .side-nav {
     min-width: 160px;
     position: fixed;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .side-nav ul li {
+    margin-bottom: 1rem;
   }
 
   .wide-right {
