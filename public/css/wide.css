@@ -12,11 +12,6 @@
     width: 600px;
   }
 
-  .bookmark-wrapper {
-    height: 100vh;
-    overflow-y: scroll;
-  }
-
   .wide-wrapper {
     display: flex;
     justify-content: center;

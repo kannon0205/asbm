@@ -79,6 +79,11 @@ textarea {
   padding-bottom: 5rem;
 }
 
+.bookmark-wrapper {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
 .header {
   height: 2.5rem;
   line-height: 2.5rem;
