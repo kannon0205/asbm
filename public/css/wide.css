@@ -8,6 +8,7 @@
 
   .wrapper,
   .bookmark-wrapper,
+  .swiper-wrapper,
   .top-wrapper {
     width: 600px;
   }
@@ -22,6 +23,11 @@
     justify-content: flex-end;
   }
 
+  .side-nav {
+    width: 160px;
+    position: fixed;
+  }
+
   .wide-right {
     min-width: 600px;
     justify-content: flex-start;
@@ -33,10 +39,6 @@
 
   .side-nav {
     display: block;
-  }
-
-  .swiper-wrapper {
-    width: 600px;
   }
 
 }
