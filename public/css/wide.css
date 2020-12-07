@@ -51,16 +51,16 @@
 
   .side-nav ul li a {
     display: block;
+    padding: 1rem;
   }
 
   .side-nav ul li a:hover {
-    background-color: rgba(77, 192, 178, 0.6);
+    background-color: rgba(77, 192, 178, 0.4);
   }
 
   .active {
     color: #FFC042;
     background-color: transparent;
-    padding: 1rem;
   }
 
   .wide-right {
