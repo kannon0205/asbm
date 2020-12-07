@@ -1,6 +1,6 @@
 /**/
 
-@media screen and (min-width:760px) {
+@media screen and (min-width:840px) {
 
   body {
     background-color: #E9E9E9;
@@ -43,6 +43,10 @@
 
   .side-nav ul li:last-child {
     margin-bottom: 0;
+  }
+
+  .side-nav ul li i {
+    margin-right: 1rem;
   }
 
   .wide-right {
