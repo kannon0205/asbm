@@ -72,7 +72,7 @@
           </div>
           <!--/header-->
           <div>
-            <% timeline[i].bookmark.forEach((bookmark) => { %>
+            <% [...timeline[i].bookmark(100)].forEach((bookmark) => { %>
 
             <section class="bookmark-container shadow bg1">
               <div class="ogp">
