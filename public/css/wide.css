@@ -6,10 +6,16 @@
     background-color: #E9E9E9;
   }
 
+  /*
   .wrapper,
   .bookmark-wrapper,
   .swiper-wrapper,
   .top-wrapper {
+    width: 600px;
+  }
+*/
+
+  .wide {
     width: 600px;
   }
 
