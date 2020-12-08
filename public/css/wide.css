@@ -20,6 +20,10 @@
     margin-top: 3.5rem;
   }
 
+  .swiper-wrapper {
+    width: 600px;
+  }
+
   .wide-wrapper {
     display: flex;
     justify-content: center;
