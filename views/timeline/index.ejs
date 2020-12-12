@@ -61,14 +61,13 @@
         <!--/header-->
         <div>
 
+          <!--100件まで-->
+
           <% if(timeline[i].bookmark.length >= 100) {
             const maxLength = 100;
           } else {
             const maxLength = timeline[i].bookmark.length;
-          }%>
-          <!--100件まで-->
-
-          <% [...timeline[i].bookmark(maxLength)].forEach((bookmark) => { %>
+          [...timeline[i].bookmark(maxLength)].forEach((bookmark) => { %>
           <section class="bookmark-container shadow bg1">
             <div class="ogp">
               <h2 class="title bold"><%= bookmark.title %></h2>
