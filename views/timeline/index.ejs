@@ -63,7 +63,7 @@
 
           <!--100件まで-->
 
-          <% for(let num = 0; num < timeline[i].bookmark.length && num < 100; num++)((bookmark) => { %>
+          <% for(let num = 0; num < timeline[i].bookmark.length && num < 100; num++) { %>
           <section class="bookmark-container shadow bg1">
             <div class="ogp">
               <h2 class="title bold"><%= timeline[i].bookmark.title %></h2>
@@ -81,7 +81,7 @@
               <p class="tc3"><a href="<%= '/user/' + timeline[i].bookmark.User.id %>"><%= timeline[i].bookmark.User.name %></a></p>
             </div>
           </section>
-          <% }); %>
+          <% }; %>
         </div>
       </div>
     </div>
