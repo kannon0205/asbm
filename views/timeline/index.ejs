@@ -31,21 +31,21 @@
     <% if(max_number === 0) {%>
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
-        <div class="wide">
-          <section>
-            <!--header-->
-            <div class="header tc1 shadow">
-              <h2>タイムライン1</h2>
-            </div>
-            <!--/header-->
+        <section>
+          <!--header-->
+          <div class="header tc1 shadow">
+            <h2>タイムライン1</h2>
+          </div>
+          <!--/header-->
+          <div>
             <div class="bookmark-container shadow bg1">
               <h2 class="bold">タイムラインがありません</h2>
               <p class="timeline-create tc3">
                 <a href="<%= '/timeline/create/' + 1 %>">新規作成</a>
               </p>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </div>
     <% } else { %>
@@ -92,20 +92,18 @@
     <% const next = max_number + 1 %>
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
-        <div class="wide">
-          <!--header-->
-          <div class="header tc1 shadow">
-            <h2><%= 'タイムライン' + next %></h2>
-          </div>
-          <!--/header-->
-          <div>
-            <section class="bookmark-container shadow bg1">
-              <h2 class="bold">新規タイムライン</h2>
-              <p class="timeline-create tc3">
-                <a href="<%= '/timeline/create/' + next %>">追加</a>
-              </p>
-            </section>
-          </div>
+        <!--header-->
+        <div class="header tc1 shadow">
+          <h2><%= 'タイムライン' + next %></h2>
+        </div>
+        <!--/header-->
+        <div>
+          <section class="bookmark-container shadow bg1">
+            <h2 class="bold">新規タイムライン</h2>
+            <p class="timeline-create tc3">
+              <a href="<%= '/timeline/create/' + next %>">追加</a>
+            </p>
+          </section>
         </div>
       </div>
     </div>
