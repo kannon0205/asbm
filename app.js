@@ -2166,6 +2166,7 @@ app.get('/', authMiddleware, (req, res) => {
           timeline[i].bookmark_id = [];
           timeline[i].user_id = [];
           timeline[i].bookmark = [];
+          timeline[i].maxLength = 0;
 
           //TimelineTagからbookmark_idを取得する
 
