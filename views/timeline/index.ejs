@@ -61,29 +61,24 @@
         <!--/header-->
         <div>
 
-          <%= if(timeline[i].bookmark.length >= 100) {
-            const maxLength = 100;
-          } else {
-            const maxLength = timeline[i].bookmark.length;
-          }%>
           <!--100件まで-->
 
-          <% [...timeline[i].bookmark(maxLength)].forEach((bookmark) => { %>
+          <% for(let num = 0; num < timeline[i].bookmark.length && num < 100; num++)((bookmark) => { %>
           <section class="bookmark-container shadow bg1">
             <div class="ogp">
-              <h2 class="title bold"><%= bookmark.title %></h2>
-              <p class="url tc3"><a href="<%= bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= bookmark.url %></a></p>
-              <p><%= bookmark.site_name %></p>
+              <h2 class="title bold"><%= timeline[i].bookmark.title %></h2>
+              <p class="url tc3"><a href="<%= timeline[i].bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= timeline[i].bookmark.url %></a></p>
+              <p><%= timeline[i].bookmark.site_name %></p>
             </div>
             <p class="memo"><%= bookmark.memo %></p>
             <p>
-              <% bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
+              <% timeline[i].bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
               #<a class="tc5" href="<%= '/tag/' + bookmarkTag.id %>"><%= bookmarkTag.name -%></a>
               <% }); %>
             </p>
             <div class="bookmark-user flex-container">
               <p><i class="fas fa-user"></i></p>
-              <p class="tc3"><a href="<%= '/user/' + bookmark.User.id %>"><%= bookmark.User.name %></a></p>
+              <p class="tc3"><a href="<%= '/user/' + timeline[i].bookmark.User.id %>"><%= timeline[i].bookmark.User.name %></a></p>
             </div>
           </section>
           <% }); %>
