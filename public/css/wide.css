@@ -15,11 +15,6 @@
   }
 */
 
-  .wrapper,
-  .bookmark-wrapper {
-    padding-bottom: 0;
-  }
-
   .wide {
     width: 600px;
     margin-top: 3.5rem;
@@ -27,6 +22,7 @@
 
   .bookmark-wrapper {
     width: 600px;
+    margin-top: 3.5rem;
   }
 
   .swiper-wrapper {
