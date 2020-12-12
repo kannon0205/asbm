@@ -70,7 +70,7 @@
               <p class="url tc3"><a href="<%= timeline[i].bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= timeline[i].bookmark.url %></a></p>
               <p><%= timeline[i].bookmark.site_name %></p>
             </div>
-            <p class="memo"><%= bookmark.memo %></p>
+            <p class="memo"><%= timeline[i].bookmark.memo %></p>
             <p>
               <% timeline[i].bookmark.bookmarkTags.forEach((bookmarkTag) => {%>
               #<a class="tc5" href="<%= '/tag/' + bookmarkTag.id %>"><%= bookmarkTag.name -%></a>
