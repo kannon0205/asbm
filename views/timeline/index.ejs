@@ -29,50 +29,46 @@
   <div class="swiper-wrapper">
 
     <% if(max_number === 0) {%>
-
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
         <div class="wide">
-
           <section>
-
             <!--header-->
             <div class="header tc1 shadow">
               <h2>タイムライン1</h2>
             </div>
             <!--/header-->
             <div>
-
               <div class="bookmark-container shadow bg1">
                 <h2 class="bold">タイムラインがありません</h2>
                 <p class="timeline-create tc3">
                   <a href="<%= '/timeline/create/' + 1 %>">新規作成</a>
                 </p>
               </div>
-
             </div>
-
           </section>
-
         </div>
       </div>
     </div>
-
     <% } else { %>
-
     <% for (let i = 1; i < max_number + 1; i++) { %>
-
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
-
         <!--header-->
         <div class="header tc1 shadow">
           <h2><%= timeline[i].name %></h2>
         </div>
         <!--/header-->
         <div>
-          <% timeline[i].bookmark.forEach((bookmark) => { %>
 
+          <% if(timeline[i].bookmark.length >= 100) {
+            const maxLength = 100;
+          } else {
+            const maxLength = timeline[i].bookmark.length;
+          }%>
+          <!--100件まで-->
+
+          <% [...timeline[i].bookmark(maxLength)].forEach((bookmark) => { %>
           <section class="bookmark-container shadow bg1">
             <div class="ogp">
               <h2 class="title bold"><%= bookmark.title %></h2>
@@ -90,42 +86,31 @@
               <p class="tc3"><a href="<%= '/user/' + bookmark.User.id %>"><%= bookmark.User.name %></a></p>
             </div>
           </section>
-
           <% }); %>
-
         </div>
-
       </div>
     </div>
-
     <% } %>
-
     <% const next = max_number + 1 %>
-
     <div class="swiper-slide">
       <div class="bookmark-wrapper">
         <div class="wide">
-
           <!--header-->
           <div class="header tc1 shadow">
             <h2><%= 'タイムライン' + next %></h2>
           </div>
           <!--/header-->
           <div>
-
             <section class="bookmark-container shadow bg1">
               <h2 class="bold">新規タイムライン</h2>
               <p class="timeline-create tc3">
                 <a href="<%= '/timeline/create/' + next %>">追加</a>
               </p>
             </section>
-
           </div>
-
         </div>
       </div>
     </div>
-
     <% } %>
 
   </div>
