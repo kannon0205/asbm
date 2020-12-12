@@ -66,8 +66,6 @@
           } else {
             timeline[i].maxLength = timeline[i].bookmark.length;
           }%>
-          <%= timeline[i].bookmark.length %>
-          <%= timeline[i].maxLength %>
           <!--100件まで-->
 
           <% for(let num = 0; num < timeline[i].maxLength; num++) { %>
@@ -85,7 +83,7 @@
             </p>
             <div class="bookmark-user flex-container">
               <p><i class="fas fa-user"></i></p>
-              <p class="tc3"><a href="<%= '/user/' + timeline[i].bookmark[num].User.id %>"><%= timeline[i].bookmark[num].User.name %></a><%= num %></p>
+              <p class="tc3"><a href="<%= '/user/' + timeline[i].bookmark[num].User.id %>"><%= timeline[i].bookmark[num].User.name %></a></p>
             </div>
           </section>
           <% }; %>
